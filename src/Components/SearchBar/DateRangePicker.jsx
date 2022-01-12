@@ -27,7 +27,7 @@ const DateRange = ({ onOkClick }) => {
 				onChange={handleSelect}
 			/>
 			<div style={{ height: '80px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'right' }}>
-				<button onClick={() => onOkClick({ startDate, endDate })}>ok</button>
+				<button onClick={() => onOkClick({ startDate, endDate })}>okok</button>
 			</div>
 		</div>
 	)
