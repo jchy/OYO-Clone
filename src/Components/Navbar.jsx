@@ -10,14 +10,14 @@ const Navbar = () => {
       <Link className={style.navLink} to="/about">
         About
       </Link>
-      <Link className={style.navLink} to="/counter">
+      {/* <Link className={style.navLink} to="/counter">
         Counter
-      </Link>
-      <Link className={style.navLink} to="/leavemsg">
+      </Link> */}
+      {/* <Link className={style.navLink} to="/leavemsg">
         Leave Msg
-      </Link>
+      </Link> */}
       <Link className={style.navLink} to="/todoapp">
-        Todo App
+        Hotels
       </Link>
     </div>
   );

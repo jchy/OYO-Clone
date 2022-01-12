@@ -8,7 +8,7 @@ function TodoInput({ onAdd }) {
       <input
         value={state}
         onChange={(e) => setState(e.target.value)}
-        placeholder="Add something"
+        placeholder="Search for hotels"
         style={{
           height: "50px",
           borderRadius: "10px",
@@ -36,7 +36,7 @@ function TodoInput({ onAdd }) {
           fontSize: "24px"
         }}
       >
-        ADD
+        Search
       </button>
     </div>
   );
