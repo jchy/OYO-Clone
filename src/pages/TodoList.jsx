@@ -34,21 +34,20 @@ function TodoItem({
 }) {
   return (
     <>
-      <div>
+      <div style={{ display: "flex", justifyContent: "left" }}>
         <div style={{ display: "flex" }}>
           <div>
-            <img src={poster} alt="img" height="70%" width="80%" />
+            <img src={poster} alt="img" height="60%" width="96%" />
           </div>
           <div style={{ width: "10%" }}>
             <img src={images[1]} alt="img" height="95px" width="120px" />
             <img src={images[0]} alt="img" height="95px" width="120px" />
             <img src={images[2]} alt="img" height="95px" width="120px" />
           </div>
+          <div style={{ marginLeft: "20px" }}>
+            <h2>{name}</h2>
+          </div>
         </div>
-        <div> Rating: {rating} </div>
-        {/*  <div> Rating: {rating} </div>
-      <div>₹: {price}</div>
-      <div>{city}</div> */}
       </div>
     </>
   );
@@ -389,8 +388,9 @@ function TodoList() {
 
         <div
           style={{
-            width: "60%",
-            margin: "auto"
+            width: "80%",
+            margin: "auto",
+            background: "teal"
           }}
         >
           {isLoading && <h3>Loading...</h3>}
