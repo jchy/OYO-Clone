@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import React from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
+// import styles from "./todolist.module.css";
 import {
   getTodosFailure,
   getTodosRequest,
@@ -21,49 +22,35 @@ function valuetext(value) {
   return `${value}`;
 }
 
-function TodoItem({ name, location, city, description, rating, price }) {
+function TodoItem({
+  name,
+  location,
+  city,
+  description,
+  rating,
+  price,
+  poster,
+  images
+}) {
   return (
-    <div
-      style={{
-        display: "flex",
-        padding: "1rem",
-        gap: "2rem",
-        border: "1px solid gray",
-        borderRadius: "20px",
-        background: "green",
-        margin: "20px"
-      }}
-    >
-      <div
-        style={{
-          background: "black",
-          padding: "10px",
-          fontSize: "17px",
-          color: "white",
-          border: "2px solid blue",
-          borderRadius: "10px",
-          margin: "10px"
-        }}
-      >
-        {name}
-      </div>
-      <div> Rating: {rating} </div>
+    <>
+      <div>
+        <div style={{ display: "flex" }}>
+          <div>
+            <img src={poster} alt="img" height="70%" width="80%" />
+          </div>
+          <div style={{ width: "10%" }}>
+            <img src={images[1]} alt="img" height="95px" width="120px" />
+            <img src={images[0]} alt="img" height="95px" width="120px" />
+            <img src={images[2]} alt="img" height="95px" width="120px" />
+          </div>
+        </div>
+        <div> Rating: {rating} </div>
+        {/*  <div> Rating: {rating} </div>
       <div>₹: {price}</div>
-      <div
-        style={{
-          background: "black",
-          padding: "10px",
-          fontSize: "17px",
-          color: "white",
-          border: "2px solid blue",
-          borderRadius: "10px",
-          margin: "10px"
-        }}
-      >
-        {location}
+      <div>{city}</div> */}
       </div>
-      <div>{city}</div>
-    </div>
+    </>
   );
 }
 
@@ -80,22 +67,10 @@ function TodoList() {
 
   const dispatch = useDispatch();
 
-  // console.log(count)
-
   useEffect(() => {
-    // getTodos(dispatch);
     dispatch(getTodos());
   }, []);
 
-  const handleDelete = (id) => {
-    const action = removeTodo(id);
-    dispatch(action);
-  };
-
-  const handleToggle = (id) => {
-    const action = toggleTodo(id);
-    dispatch(action);
-  };
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -412,15 +387,20 @@ function TodoList() {
           </div>
         </div>
 
-        <div style={{ width: "60%", margin: "auto" }}>
+        <div
+          style={{
+            width: "60%",
+            margin: "auto"
+          }}
+        >
           {isLoading && <h3>Loading...</h3>}
           {isError && <h3> Something went wrong!</h3>}
           {todos.map((item) => (
             <TodoItem
               key={item.id}
               {...item}
-              onDelete={handleDelete}
-              onToggle={handleToggle}
+              // onDelete={handleDelete}
+              // onToggle={handleToggle}
             />
           ))}
         </div>
