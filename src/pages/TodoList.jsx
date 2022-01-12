@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import React from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import WifiIcon from "@mui/icons-material/Wifi";
+import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
+import ElevatorIcon from "@mui/icons-material/Elevator";
+// import PhotoCameraFrontIcon from "@mui/icons-material/PhotoCameraFront";
 // import styles from "./todolist.module.css";
 import {
   getTodosFailure,
@@ -44,8 +48,59 @@ function TodoItem({
             <img src={images[0]} alt="img" height="95px" width="120px" />
             <img src={images[2]} alt="img" height="95px" width="120px" />
           </div>
-          <div style={{ marginLeft: "20px" }}>
+          <div style={{ marginLeft: "40px", textAlign: "left" }}>
             <h2>{name}</h2>
+            <p>{location}</p>
+            <div style={{ display: "flex" }}>
+              <div>
+                <button
+                  style={{
+                    background: "rgb(82,181,32)",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "5px"
+                  }}
+                >
+                  {rating}★
+                </button>
+                ({rating * 10} Ratings) .{rating > 4 ? "Very Good" : "Good"}
+              </div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <p>🛏 AC</p>
+              </div>
+              <div>
+                <p>🚘 Parking Facility</p>{" "}
+              </div>
+              <div>
+                {" "}
+                <p>🙏 Reception</p>{" "}
+              </div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <p>
+                  <WifiIcon /> Free Wifi
+                </p>
+              </div>
+              <div>
+                <p>📺 TV</p>
+              </div>
+              <div>
+                <p>
+                  <CameraswitchIcon /> CCTV Camera
+                </p>
+              </div>
+              <div>
+                <p>
+                  <ElevatorIcon /> Elevator
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>{rating > 4 ? "WIZARD MEMBER" : "Vaccinated Staff"}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -389,8 +444,7 @@ function TodoList() {
         <div
           style={{
             width: "80%",
-            margin: "auto",
-            background: "teal"
+            margin: "auto"
           }}
         >
           {isLoading && <h3>Loading...</h3>}
