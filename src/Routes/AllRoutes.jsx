@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom";
 import About from "../pages/About";
 import Home from "../pages/Home";
-import UserDetails from "../pages/UserDetails";
-import Users from "../pages/Users";
+import HotelDetails from "../pages/HotelDetails";
+import Hotels from "../pages/Hotels";
 
 function AllRoutes() {
   return (
@@ -10,13 +10,12 @@ function AllRoutes() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/users">
-        <Users />
+      <Route exact path="/hotels">
+        <Hotels />
       </Route>
-      <Route exact path="/users/:id">
-        <UserDetails />
+      <Route exact path="/hoteldetails">
+        <HotelDetails />
       </Route>
-
       <Route exact path="/about">
         <About />
       </Route>
