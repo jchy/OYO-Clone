@@ -5,6 +5,8 @@ import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import styles from "./todolist.module.css";
+// import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import {
   getTodosFailure,
   getTodosRequest,
@@ -185,6 +187,10 @@ function TodoItem({
 }
 
 function TodoList() {
+  const [mail, setMail] = React.useState("abc@gmail.com");
+  const handleMailChange = (event) => {
+    setMail(event.target.value);
+  };
   const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event, newValue) => {
@@ -549,10 +555,47 @@ function TodoList() {
               </span>
             </div>
           </div>
-          <div style={{ height: "2000px", overflowY: "scroll" }}>
+          <div style={{ height: "1960px", overflowY: "scroll" }}>
             {todos.map((item) => (
               <TodoItem key={item.id} {...item} />
             ))}
+          </div>
+          <div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <img src="./images/fireLogo.png" alt="img" height="60px" />
+              </div>
+              <div>
+                <div>
+                  <span style={{ fontSize: "20px", fontWeight: "700" }}>
+                    Get access to exclusive deals
+                  </span>
+                </div>
+                <div>
+                  <span style={{ color: "rgb(127,127,127)" }}>
+                    Only the best deals reach your inbox
+                  </span>
+                </div>
+              </div>
+              <div>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "25ch" }
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-name"
+                    label="Your email"
+                    value={mail}
+                    onChange={handleMailChange}
+                    placeholder="e.g., john@email.com"
+                  />
+                </Box>
+              </div>
+            </div>
           </div>
         </div>
       </div>
