@@ -172,7 +172,8 @@ function HotelItem({
 function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const [sortBy, setSortBy] = useState("popularity");
-  const [filterBy, setFilterBy] = useState("Banglore");
+  const [filterBy, setFilterBy] = useState("Bangalore");
+  const [bangaloreData, setBangaloreData] = useState([]);
   const handleMailChange = (event) => {
     setMail(event.target.value);
   };
@@ -217,29 +218,34 @@ function DisplayHotel() {
       return hotelDataArray;
   }
 
+  // const handleBangaloreClick = (e) => {
+  //   hotelDataArray.filter((hotels) => hotels.city === "Bangalore");
+  // };
+
   const handleFilterClick = (e) => {
     setFilterBy(e.target.textContent);
     console.log(filterBy);
   };
 
-  // switch (filterBy) {
-  //   case "Banglore": {
-  //     hotelDataArray = hotelDataArray.filter(
-  //       (hotels) => hotels.city === "Bangalore"
-  //     );
-  //     break;
+  // let [x,setX] = useState([]);
+  // useEffect(() => {
+  //   switch (filterBy) {
+  //     case "Bangalore": {
+  //       console.log("hello");
+  //       hotelDataArray = hotelDataArray.filter(
+  //         (hotels) => hotels.city === "Bangalore"
+  //       );
+  //       break;
+  //     }
+  //     case "Delhi": {
+  //       hotelDataArray.filter((hotels) => hotels.city === "Delhi");
+  //       break;
+  //     }
+  //     default: {
+  //       return hotelDataArray;
+  //     }
   //   }
-
-  //   case "Delhi": {
-  //     hotelDataArray = hotelDataArray.filter(
-  //       (hotels) => hotels.city === "Delhi"
-  //     );
-  //     break;
-  //   }
-  //   default: {
-  //     return hotelDataArray;
-  //   }
-  // }
+  // }, [filterBy]);
 
   return (
     <>
@@ -304,6 +310,7 @@ function DisplayHotel() {
           <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
+              onClick={handleFilterClick}
               style={{
                 background: "rgb(242,242,242)",
                 color: "rgb(34,34,34)",
@@ -316,6 +323,7 @@ function DisplayHotel() {
           <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
+              onClick={handleFilterClick}
               style={{
                 background: "rgb(242,242,242)",
                 color: "rgb(34,34,34)",
@@ -328,6 +336,7 @@ function DisplayHotel() {
           <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
+              onClick={handleFilterClick}
               style={{
                 background: "rgb(242,242,242)",
                 color: "rgb(34,34,34)",
@@ -340,6 +349,7 @@ function DisplayHotel() {
           <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
+              onClick={handleFilterClick}
               style={{
                 background: "rgb(242,242,242)",
                 color: "rgb(34,34,34)",
@@ -730,9 +740,16 @@ function DisplayHotel() {
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
-            {hotelDataArray.map((item) => (
-              <HotelItem key={item.id} {...item} />
-            ))}
+            {hotelDataArray
+              .filter((elem) => {
+                if (elem.city === filterBy) {
+                  return elem.city;
+                }
+                return null;
+              })
+              .map((item) => (
+                <HotelItem key={item.id} {...item} />
+              ))}
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div
