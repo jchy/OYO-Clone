@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import WifiIcon from "@mui/icons-material/Wifi";
@@ -171,6 +171,7 @@ function HotelItem({
 
 function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
+  const [sortBy, setSortBy] = useState("popularity");
   const handleMailChange = (event) => {
     setMail(event.target.value);
   };
@@ -189,6 +190,16 @@ function DisplayHotel() {
   useEffect(() => {
     dispatch(getHotelRooms());
   }, []);
+
+  const handleSortBy = (e) => {
+    setSortBy(e.target.value);
+    sortBySelcetedParameter();
+  };
+
+  const sortBySelcetedParameter = () => {
+    hotelDataArray.sort((a, b) => a.rating > b.rating);
+    console.log(hotelDataArray, "sorted");
+  };
 
   return (
     <>
@@ -662,7 +673,12 @@ function DisplayHotel() {
               </span>
               <span style={{ marginLeft: "100px" }}>Sort By </span>
               <span>
-                <select name="sort" id="sort" style={{ padding: "10px" }}>
+                <select
+                  onChange={handleSortBy}
+                  name="sort"
+                  id="sort"
+                  style={{ padding: "10px" }}
+                >
                   <option value="popularity">Popularity</option>
                   <option value="rating">Guest Ratings</option>
                   <option value="lowtohigh">Price Low To High</option>

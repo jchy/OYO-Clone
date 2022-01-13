@@ -2,14 +2,10 @@ import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import authReducer from "./auth/reducer";
 import appReducer from "./app/reducer";
-import msgReducer from "./msg/reducer";
-import countReducer from "./counter/reducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  app: appReducer,
-  msg: msgReducer,
-  count: countReducer
+  app: appReducer
 });
 
 const networkRequestsMiddleware = (store) => (next) => (action) => {
