@@ -1,5 +1,8 @@
-function About() {
-  return <h3>Home Page</h3>;
-}
-
+const About = () => {
+  return (
+    <div>
+      <h3> About Us </h3>
+    </div>
+  );
+};
 export default About;
