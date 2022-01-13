@@ -273,7 +273,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Mahipalpur
+              Banglore
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -285,7 +285,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Paharganj
+              Delhi
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -297,7 +297,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              New Delhi Railway Station
+              Gurgaon
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -309,7 +309,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Karol Bagh
+              Nagpur
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -321,7 +321,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Dwarka, New Delhi
+              Mumbai
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
