@@ -516,11 +516,20 @@ function TodoList() {
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
                 1258 OYOs in Delhi, India
               </span>
+              <span> Map View </span>
               <span style={{ marginLeft: "20px" }}>
                 <label className={styles.switch}>
                   <input type="checkbox" />
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
+              </span>
+              <span>
+                <select name="sort" id="sort">
+                  <option value="popularity">Popularity</option>
+                  <option value="rating">Guest Rating</option>
+                  <option value="lowtohigh">Price Low to High</option>
+                  <option value="lowtohigh">Price High to Low</option>
+                </select>
               </span>
             </div>
           </div>
