@@ -643,19 +643,25 @@ function TodoList() {
           {isLoading && <h3>Loading...</h3>}
           {isError && <h3> Something went wrong!</h3>}
 
-          <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              margin: "30px",
+              justifyContent: "left"
+            }}
+          >
             <div>
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
                 1258 OYOs in Delhi, India
               </span>
-              <span> Map View </span>
-              <span style={{ marginLeft: "20px" }}>
+              <span style={{ marginLeft: "100px" }}> Map View </span>
+              <span style={{ marginLeft: "8px" }}>
                 <label className={styles.switch}>
                   <input type="checkbox" />
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
               </span>
-              <span>Sort By </span>
+              <span style={{ marginLeft: "100px" }}>Sort By </span>
               <span>
                 <select name="sort" id="sort" style={{ padding: "10px" }}>
                   <option value="popularity">Popularity</option>
@@ -666,6 +672,7 @@ function TodoList() {
               </span>
             </div>
           </div>
+          <hr />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
             {todos.map((item) => (
               <TodoItem key={item.id} {...item} />
