@@ -312,7 +312,7 @@ function DisplayHotel() {
                 + View More
               </Button>
             </div>
-            <hr />
+            <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
             <div>
               <h4>Price </h4>
               <Box>
@@ -326,7 +326,7 @@ function DisplayHotel() {
               </Box>
             </div>
           </div>
-          <hr />
+          <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div>
             <h4>Collections</h4>
             <div
@@ -396,7 +396,7 @@ function DisplayHotel() {
                 </Button>
               </div>
             </div>
-            <hr />
+            <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
             <h4>Categories</h4>
             <div
               style={{
@@ -532,7 +532,7 @@ function DisplayHotel() {
                 + View More
               </Button>
             </div>
-            <hr />
+            <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
             <h4>Acoomodation Type</h4>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
@@ -560,7 +560,7 @@ function DisplayHotel() {
                 + View More
               </Button>
             </div>
-            <hr />
+            <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
             <h4>Hotel Facilities</h4>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
@@ -598,7 +598,7 @@ function DisplayHotel() {
               + View More
             </Button>
           </div>
-          <hr />
+          <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ display: "flex" }}>
             <div>
               <img src="./images/w-logo.png" alt="img" height="30px" />
@@ -620,7 +620,7 @@ function DisplayHotel() {
               </div>
             </div>
           </div>
-          <hr />
+          <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <h4>Check-in features</h4>
           <div>
             <FormGroup>
@@ -671,13 +671,21 @@ function DisplayHotel() {
               </span>
             </div>
           </div>
-          <hr />
+          <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
             {todos.map((item) => (
               <HotelItem key={item.id} {...item} />
             ))}
           </div>
-          <div>
+          <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
+          <div
+            style={{
+              border: "1px solid rgb(224,224,224)",
+              borderRadius: "10px",
+              padding: "50px",
+              marginTop: "20px"
+            }}
+          >
             <div style={{ display: "flex" }}>
               <div>
                 <img src="./images/fireLogo.png" alt="img" height="60px" />

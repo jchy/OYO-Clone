@@ -1,8 +1,8 @@
 .nav {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   gap: 1rem;
-  background-color: yellow;
+  /* background-color: yellow; */
   border: 1px solid grey;
   padding: 20px;
 }
@@ -14,4 +14,7 @@
   border-radius: 10px;
   font-size: 16px;
   border: 2px solid blue;
+}
+.navLogo {
+  text-align: left;
 }
