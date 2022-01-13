@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./navbar.module.css";
+import style from "./navbar.module.css";
 
-const NavBar = () => {
+const Navbar = () => {
   return (
-    <div className={styles.NavBar}>
-      <Link to="/">Home</Link>
-      <Link to="/hotels">Users</Link>
-      <Link to="/about">About</Link>
-      <Link to="hoteldetails">Hotel Details</Link>
+    <div className={style.nav}>
+      <Link className={style.navLogo} to="/">
+        <img src="./images/OYO_Logo.png" alt="img" height="35px" width="90px" />
+      </Link>
+      <Link className={style.navLink} to="/">
+        Home
+      </Link>
+      <Link className={style.navLink} to="/about">
+        About
+      </Link>
+      <Link className={style.navLink} to="/oyorooms">
+        Hotels
+      </Link>
     </div>
   );
 };
 
-export default NavBar;
+export default Navbar;
