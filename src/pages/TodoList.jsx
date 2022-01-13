@@ -34,7 +34,8 @@ function TodoItem({
   rating,
   price,
   poster,
-  images
+  images,
+  discount
 }) {
   return (
     <>
@@ -100,6 +101,33 @@ function TodoItem({
             </div>
             <div style={{ display: "flex" }}>
               <div>{rating > 4 ? "WIZARD MEMBER" : "Vaccinated Staff"}</div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <span
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "700",
+                    lineHeight: "24px",
+                    color: "rgb(238,42,35)"
+                  }}
+                >
+                  ₹{price}
+                </span>
+                <span
+                  style={{
+                    textDecoration: "line-through",
+                    fontSize: "10px",
+                    lineHeight: "25px",
+                    color: "rgb(180,186,188)"
+                  }}
+                >
+                  ₹{((price * 100) / (100 - discount)).toFixed(2)}
+                </span>
+                <span style={{ color: "rgb(244,165,34)" }}>
+                  {discount}% off
+                </span>
+              </div>
             </div>
           </div>
         </div>
