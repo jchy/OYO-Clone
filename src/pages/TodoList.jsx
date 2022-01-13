@@ -4,11 +4,7 @@ import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
-// import Stack from "@mui/material/Stack";
-// import Button from "@mui/material/Button";
-
-// import PhotoCameraFrontIcon from "@mui/icons-material/PhotoCameraFront";
-// import styles from "./todolist.module.css";
+import styles from "./todolist.module.css";
 import {
   getTodosFailure,
   getTodosRequest,
@@ -510,6 +506,21 @@ function TodoList() {
         >
           {isLoading && <h3>Loading...</h3>}
           {isError && <h3> Something went wrong!</h3>}
+
+          <div style={{ display: "flex" }}>
+            <div>
+              <span style={{ fontSize: "20px", fontWeight: "700" }}>
+                1258 OYOs in Delhi, Indi
+              </span>
+              <span>
+                <label className={styles.switch}>
+                  <input type="checkbox" />
+                  <span className={`${styles.slider} ${styles.round}`}></span>
+                </label>
+              </span>
+            </div>
+          </div>
+
           {todos.map((item) => (
             <TodoItem
               key={item.id}
