@@ -510,9 +510,9 @@ function TodoList() {
           <div style={{ display: "flex" }}>
             <div>
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
-                1258 OYOs in Delhi, Indi
+                1258 OYOs in Delhi, India
               </span>
-              <span>
+              <span style={{ marginLeft: "20px" }}>
                 <label className={styles.switch}>
                   <input type="checkbox" />
                   <span className={`${styles.slider} ${styles.round}`}></span>
