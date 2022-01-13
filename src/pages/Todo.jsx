@@ -21,7 +21,6 @@ function Todo() {
 
   return (
     <div>
-      <TodoInput onAdd={handleAdd} />
       <TodoList />
     </div>
   );

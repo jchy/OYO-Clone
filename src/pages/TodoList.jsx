@@ -42,7 +42,7 @@ function TodoItem({
       <div style={{ display: "flex", justifyContent: "left" }}>
         <div style={{ display: "flex" }}>
           <div>
-            <img src={poster} alt="img" height="60%" width="96%" />
+            <img src={poster} alt="img" height="76%" width="96%" />
           </div>
           <div style={{ width: "10%" }}>
             <img src={images[1]} alt="img" height="95px" width="120px" />
@@ -646,7 +646,7 @@ function TodoList() {
           <div
             style={{
               display: "flex",
-              margin: "30px",
+              marginBottom: "30px",
               justifyContent: "left"
             }}
           >
