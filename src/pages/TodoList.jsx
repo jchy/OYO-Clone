@@ -20,6 +20,21 @@ import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
+import PopularityBtn from "./PopularityBtn";
+
+// function FadeMenu() {
+//   const [anchorEl, setAnchorEl] = React.useState(null);
+//   const open = Boolean(anchorEl);
+//   const handleClick = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+//   const handleClose = (event) => {
+//     console.log(event.target.textContent);
+//     setAnchorEl(null);
+//   };
 
 function valuetext(value) {
   return `${value}`;
@@ -523,25 +538,22 @@ function TodoList() {
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
               </span>
+              <span>Sort By </span>
               <span>
-                <select name="sort" id="sort">
+                <select name="sort" id="sort" style={{ padding: "10px" }}>
                   <option value="popularity">Popularity</option>
-                  <option value="rating">Guest Rating</option>
-                  <option value="lowtohigh">Price Low to High</option>
-                  <option value="lowtohigh">Price High to Low</option>
+                  <option value="rating">Guest Ratings</option>
+                  <option value="lowtohigh">Price Low To High</option>
+                  <option value="hightolow">Price High To Low</option>
                 </select>
               </span>
             </div>
           </div>
-
-          {todos.map((item) => (
-            <TodoItem
-              key={item.id}
-              {...item}
-              // onDelete={handleDelete}
-              // onToggle={handleToggle}
-            />
-          ))}
+          <div style={{ height: "2000px", overflowY: "scroll" }}>
+            {todos.map((item) => (
+              <TodoItem key={item.id} {...item} />
+            ))}
+          </div>
         </div>
       </div>
     </>
