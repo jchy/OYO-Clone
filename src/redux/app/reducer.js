@@ -17,41 +17,41 @@ function reducer(state = initState, action) {
         token: action.payload.token
       };
     }
-    case appConstants.GET_TODO_REQUEST: {
+    case appConstants.GET_HOTELDATA_REQUEST: {
       return {
         ...state,
         isLoading: true,
         isError: false
       };
     }
-    case appConstants.GET_TODO_SUCCESS: {
+    case appConstants.GET_HOTELDATA_SUCCESS: {
       return {
         ...state,
         todos: action.payload.todos,
         isLoading: false
       };
     }
-    case appConstants.GET_TODO_FAILURE: {
+    case appConstants.GET_HOTELDATA_FAILURE: {
       return {
         ...state,
         isLoading: false,
         isError: true
       };
     }
-    case appConstants.ADD_TODO_REQUEST: {
+    case appConstants.ADD_HOTELDATA_REQUEST: {
       return {
         ...state,
         isLoading: true,
         isError: false
       };
     }
-    case appConstants.ADD_TODO_SUCCESS: {
+    case appConstants.ADD_HOTELDATA_SUCCESS: {
       return {
         ...state,
         isLoading: false
       };
     }
-    case appConstants.ADD_TODO_FAILURE: {
+    case appConstants.ADD_HOTELDATA_FAILURE: {
       return {
         ...state,
         isLoading: false,
@@ -59,17 +59,17 @@ function reducer(state = initState, action) {
       };
     }
 
-    case appConstants.ADD_TODO: {
+    case appConstants.ADD_HOTELDATA: {
       return { ...state, todos: [...state.todos, action.payload] };
     }
-    case appConstants.REMOVE_TODO_ITEM: {
+    case appConstants.REMOVE_HOTELDATA_ITEM: {
       // TODO
       return {
         ...state,
         todos: state.todos.filter((item) => item.id !== action?.payload?.id)
       };
     }
-    case appConstants.TOGGLE_TODO_STATUS: {
+    case appConstants.TOGGLE_HOTELDATA_STATUS: {
       // TODO
       return {
         ...state,

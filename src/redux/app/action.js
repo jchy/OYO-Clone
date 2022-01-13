@@ -1,71 +1,71 @@
 import { appConstants } from "./actionTypes";
 
-export const getTodosRequest = () => {
+export const getHotelRoomRequest = () => {
   return {
-    type: appConstants.GET_TODO_REQUEST,
+    type: appConstants.GET_HOTELDATA_REQUEST,
     payload: {
       isLoading: true
     }
   };
 };
 
-export const getTodosSuccess = (todos) => {
+export const getHotelRoomSuccess = (todos) => {
   return {
-    type: appConstants.GET_TODO_SUCCESS,
+    type: appConstants.GET_HOTELDATA_SUCCESS,
     payload: {
       todos: todos
     }
   };
 };
 
-export const getTodosFailure = () => {
+export const getHotelRoomFailure = () => {
   return {
-    type: appConstants.GET_TODO_FAILURE,
+    type: appConstants.GET_HOTELDATA_FAILURE,
     payload: {
       isError: true
     }
   };
 };
 
-export const getTodos = () => (dispatch) => {
+export const getHotelRoom = () => (dispatch) => {
   // pre fetch
-  const requestAction = getTodosRequest();
+  const requestAction = getHotelRoomRequest();
   dispatch(requestAction);
   return fetch("https://oyo-server.herokuapp.com/hotel")
     .then((res) => res.json())
     .then((res) => {
       //success
-      const successAction = getTodosSuccess(res);
+      const successAction = getHotelRoomSuccess(res);
       dispatch(successAction);
     })
     .catch((res) => {
       // failure
-      const failureAction = getTodosFailure();
+      const failureAction = getHotelRoomFailure();
       dispatch(failureAction);
     });
 };
 
-export const addTodosRequest = () => {
+export const addHotelRoomRequest = () => {
   return {
-    type: appConstants.ADD_TODO_REQUEST,
+    type: appConstants.ADD_HOTELDATA_REQUEST,
     payload: {
       isLoading: true
     }
   };
 };
 
-export const addTodosSuccess = (todos) => {
+export const addHotelRoomSuccess = (todos) => {
   return {
-    type: appConstants.ADD_TODO_SUCCESS,
+    type: appConstants.ADD_HOTELDATA_SUCCESS,
     payload: {
       todos: todos
     }
   };
 };
 
-export const addTodosFailure = () => {
+export const addHotelRoomFailure = () => {
   return {
-    type: appConstants.ADD_TODO_FAILURE,
+    type: appConstants.ADD_HOTELDATA_FAILURE,
     payload: {
       isError: true
     }
@@ -74,9 +74,9 @@ export const addTodosFailure = () => {
 
 // actionCreators
 // type is mandatory, string
-export const addTodo = ({ title, status, id }) => {
+export const addHotelRoom = ({ title, status, id }) => {
   return {
-    type: appConstants.ADD_TODO,
+    type: appConstants.ADD_HOTELDATA,
     payload: {
       title,
       status,
@@ -85,8 +85,8 @@ export const addTodo = ({ title, status, id }) => {
   };
 };
 
-export const addTodos = (text) => (dispatch) => {
-  const requestAction = addTodosRequest();
+export const addHotelRooms = (text) => (dispatch) => {
+  const requestAction = addHotelRoomRequest();
   dispatch(requestAction);
   return fetch("https://oyo-server.herokuapp.com/hotel", {
     method: "POST",
@@ -101,25 +101,25 @@ export const addTodos = (text) => (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       //success
-      const successAction = addTodosSuccess(res);
+      const successAction = addHotelRoomSuccess(res);
       dispatch(successAction);
     })
     .catch((res) => {
       // failure
-      const failureAction = addTodosFailure();
+      const failureAction = addHotelRoomFailure();
       dispatch(failureAction);
     });
 };
 
-export const removeTodo = (id) => ({
+export const removeHotelRoom = (id) => ({
   type: appConstants.REMOVE_TODO_ITEM,
   payload: {
     id: id
   }
 });
 
-export const toggleTodo = (id) => ({
-  type: appConstants.TOGGLE_TODO_STATUS,
+export const toggleHotelRoom = (id) => ({
+  type: appConstants.TOGGLE_HOTELDATA_STATUS,
   payload: {
     id: id
   }

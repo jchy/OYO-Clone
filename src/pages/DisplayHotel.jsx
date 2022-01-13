@@ -5,16 +5,15 @@ import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import styles from "./todolist.module.css";
-import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import TextField from "@mui/material/TextField";
-import {
-  getTodosFailure,
-  getTodosRequest,
-  getTodosSuccess,
-  removeTodo,
-  toggleTodo
-} from "../redux/app/action";
-import { getTodos } from "./api";
+// import {
+//   getHotelRoomFailure,
+//   getHotelRoomRequest,
+//   getHotelRoomSuccess,
+//   removeHotelRoom,
+//   toggleHotelRoom
+// } from "../redux/app/action";
+import { getHotelRooms } from "./api";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
@@ -26,7 +25,7 @@ function valuetext(value) {
   return `${value}`;
 }
 
-function TodoItem({
+function HotelItem({
   name,
   location,
   city,
@@ -170,7 +169,7 @@ function TodoItem({
   );
 }
 
-function TodoList() {
+function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const handleMailChange = (event) => {
     setMail(event.target.value);
@@ -188,7 +187,7 @@ function TodoList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getTodos());
+    dispatch(getHotelRooms());
   }, []);
 
   return (
@@ -675,7 +674,7 @@ function TodoList() {
           <hr />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
             {todos.map((item) => (
-              <TodoItem key={item.id} {...item} />
+              <HotelItem key={item.id} {...item} />
             ))}
           </div>
           <div>
@@ -733,4 +732,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default DisplayHotel;

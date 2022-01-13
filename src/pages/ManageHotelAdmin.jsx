@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TodoInput({ onAdd }) {
+function ManageHotelAdmin({ onAdd }) {
   const [state, setState] = useState("");
 
   return (
@@ -42,4 +42,4 @@ function TodoInput({ onAdd }) {
   );
 }
 
-export default TodoInput;
+export default ManageHotelAdmin;

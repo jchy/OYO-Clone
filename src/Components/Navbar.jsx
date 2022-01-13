@@ -10,7 +10,7 @@ const Navbar = () => {
       <Link className={style.navLink} to="/about">
         About
       </Link>
-      <Link className={style.navLink} to="/todoapp">
+      <Link className={style.navLink} to="/oyorooms">
         Hotels
       </Link>
     </div>

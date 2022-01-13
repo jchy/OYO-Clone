@@ -1,33 +1,33 @@
 import {
-  addTodosFailure,
-  addTodosRequest,
-  addTodosSuccess,
-  getTodosFailure,
-  getTodosRequest,
-  getTodosSuccess
+  addHotelRoomFailure,
+  addHotelRoomRequest,
+  addHotelRoomSuccess,
+  getHotelRoomFailure,
+  getHotelRoomRequest,
+  getHotelRoomSuccess
 } from "../redux/app/action";
 
-export const getTodos = () => (dispatch) => {
+export const getHotelRooms = () => (dispatch) => {
   // pre fetch
-  const requestAction = getTodosRequest();
+  const requestAction = getHotelRoomRequest();
   dispatch(requestAction);
   return fetch("https://oyo-server.herokuapp.com/hotel")
     .then((res) => res.json())
     .then((res) => {
       //success
       console.log(res);
-      const successAction = getTodosSuccess(res);
+      const successAction = getHotelRoomSuccess(res);
       dispatch(successAction);
     })
     .catch((res) => {
       // failure
-      const failureAction = getTodosFailure();
+      const failureAction = getHotelRoomFailure();
       dispatch(failureAction);
     });
 };
 
-export const addTodos = (text) => (dispatch) => {
-  const requestAction = addTodosRequest();
+export const addHotelRooms = (text) => (dispatch) => {
+  const requestAction = addHotelRoomRequest();
   dispatch(requestAction);
   return fetch("https://oyo-server.herokuapp.com/hotel", {
     method: "POST",
@@ -42,12 +42,12 @@ export const addTodos = (text) => (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       //success
-      const successAction = addTodosSuccess(res);
+      const successAction = addHotelRoomSuccess(res);
       dispatch(successAction);
     })
     .catch((res) => {
       // failure
-      const failureAction = addTodosFailure();
+      const failureAction = addHotelRoomFailure();
       dispatch(failureAction);
     });
 };

@@ -1,9 +1,7 @@
 import { Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Todo from "../pages/Todo";
-// import Counter from "../pages/Counter";
-// import LeaveMsg from "../pages/LeaveMsg";
+import Hotel from "../pages/Hotel";
 
 const AllRoutes = () => {
   return (
@@ -14,15 +12,9 @@ const AllRoutes = () => {
       <Route exact path="/about">
         <About />
       </Route>
-      <Route exact path="/todoapp">
-        <Todo />
+      <Route exact path="/oyorooms">
+        <Hotel />
       </Route>
-      {/* <Route exact path="/counter">
-        <Counter />
-      </Route> */}
-      {/* <Route exact path="/leavemsg">
-        <LeaveMsg />
-      </Route> */}
     </div>
   );
 };
