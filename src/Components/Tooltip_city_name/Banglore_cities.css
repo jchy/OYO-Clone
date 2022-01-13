@@ -1,0 +1,17 @@
+.city{
+  
+    font-size: 18px;
+    text-align: left;
+}
+.city:hover{
+  
+   color: red;
+   cursor: pointer;
+}
+.main_div{
+    width: 300px;
+    padding-left: 50px;
+}
+.city:nth-of-type(9){
+    color: red;
+}
