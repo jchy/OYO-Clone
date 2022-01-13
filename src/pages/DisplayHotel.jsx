@@ -172,6 +172,7 @@ function HotelItem({
 function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const [sortBy, setSortBy] = useState("popularity");
+  const [filterBy, setFilterBy] = useState("Banglore");
   const handleMailChange = (event) => {
     setMail(event.target.value);
   };
@@ -180,7 +181,7 @@ function DisplayHotel() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { hotelDataArray, isLoading, isError } = useSelector(
+  let { hotelDataArray, isLoading, isError } = useSelector(
     (state) => state.app,
     shallowEqual
   );
@@ -215,7 +216,30 @@ function DisplayHotel() {
     default:
       return hotelDataArray;
   }
-  // };
+
+  const handleFilterClick = (e) => {
+    setFilterBy(e.target.textContent);
+    console.log(filterBy);
+  };
+
+  // switch (filterBy) {
+  //   case "Banglore": {
+  //     hotelDataArray = hotelDataArray.filter(
+  //       (hotels) => hotels.city === "Bangalore"
+  //     );
+  //     break;
+  //   }
+
+  //   case "Delhi": {
+  //     hotelDataArray = hotelDataArray.filter(
+  //       (hotels) => hotels.city === "Delhi"
+  //     );
+  //     break;
+  //   }
+  //   default: {
+  //     return hotelDataArray;
+  //   }
+  // }
 
   return (
     <>
@@ -267,13 +291,14 @@ function DisplayHotel() {
           <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
+              onClick={handleFilterClick}
               style={{
                 background: "rgb(242,242,242)",
                 color: "rgb(34,34,34)",
                 border: "none"
               }}
             >
-              Banglore
+              Bangalore
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
