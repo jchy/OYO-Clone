@@ -172,7 +172,7 @@ function HotelItem({
 function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const [sortBy, setSortBy] = useState("popularity");
-  const [filterBy, setFilterBy] = useState("Bangalore");
+  const [filterBy, setFilterBy] = useState("");
   const [bangaloreData, setBangaloreData] = useState([]);
   const handleMailChange = (event) => {
     setMail(event.target.value);
@@ -744,8 +744,10 @@ function DisplayHotel() {
               .filter((elem) => {
                 if (elem.city === filterBy) {
                   return elem.city;
+                } else if (filterBy === "") {
+                  return elem;
                 }
-                return null;
+                return;
               })
               .map((item) => (
                 <HotelItem key={item.id} {...item} />
