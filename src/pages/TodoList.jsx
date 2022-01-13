@@ -209,7 +209,7 @@ function TodoList() {
 
   return (
     <>
-      <div style={{ display: "flex", padding: "20px" }}>
+      <div style={{ display: "flex", padding: "20px", textAlign: "left" }}>
         <div style={{ width: "20%" }}>
           <div>
             <h2>Filters</h2>
@@ -220,7 +220,7 @@ function TodoList() {
           <div>
             <input type="text" placeholder="Search..." />
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               style={{
@@ -232,7 +232,7 @@ function TodoList() {
               Mahipalpur
             </Button>
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               style={{
@@ -244,7 +244,7 @@ function TodoList() {
               Paharganj
             </Button>
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               style={{
@@ -256,7 +256,7 @@ function TodoList() {
               New Delhi Railway Station
             </Button>
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               style={{
@@ -268,7 +268,7 @@ function TodoList() {
               Karol Bagh
             </Button>
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               style={{
@@ -280,7 +280,7 @@ function TodoList() {
               Dwarka, New Delhi
             </Button>
           </div>
-          <div>
+          <div style={{ margin: "10px" }}>
             <div>
               <Button
                 variant="outlined"
