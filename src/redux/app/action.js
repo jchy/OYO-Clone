@@ -9,11 +9,11 @@ export const getHotelRoomRequest = () => {
   };
 };
 
-export const getHotelRoomSuccess = (todos) => {
+export const getHotelRoomSuccess = (hotelDataArray) => {
   return {
     type: appConstants.GET_HOTELDATA_SUCCESS,
     payload: {
-      todos: todos
+      hotelDataArray: hotelDataArray
     }
   };
 };
@@ -54,11 +54,11 @@ export const addHotelRoomRequest = () => {
   };
 };
 
-export const addHotelRoomSuccess = (todos) => {
+export const addHotelRoomSuccess = (hotelDataArray) => {
   return {
     type: appConstants.ADD_HOTELDATA_SUCCESS,
     payload: {
-      todos: todos
+      hotelDataArray: hotelDataArray
     }
   };
 };
@@ -112,7 +112,7 @@ export const addHotelRooms = (text) => (dispatch) => {
 };
 
 export const removeHotelRoom = (id) => ({
-  type: appConstants.REMOVE_TODO_ITEM,
+  type: appConstants.REMOVE_HOTELDATA_ITEM,
   payload: {
     id: id
   }

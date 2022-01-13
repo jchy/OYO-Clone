@@ -179,7 +179,7 @@ function DisplayHotel() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { todos, isLoading, isError } = useSelector(
+  const { hotelDataArray, isLoading, isError } = useSelector(
     (state) => state.app,
     shallowEqual
   );
@@ -673,7 +673,7 @@ function DisplayHotel() {
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
-            {todos.map((item) => (
+            {hotelDataArray.map((item) => (
               <HotelItem key={item.id} {...item} />
             ))}
           </div>
