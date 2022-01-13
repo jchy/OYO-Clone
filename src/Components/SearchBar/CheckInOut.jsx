@@ -1,23 +1,22 @@
 import React, { useState } from 'react'
 import DateRange from './DateRangePicker'
 import styles from './input.module.css'
+import { useSelector } from 'react-redux';
 
 const CheckInOut = () => {
     const [showDatePicker, setShowDatePicker] = useState(false);
-    const [checkoutTime, setCheckoutTime] = useState({ start: "", end: "" })
-    const handleCheckInOut = ({ startDate, endDate }) => {
-        startDate = JSON.stringify(startDate)
-        endDate = JSON.stringify(endDate)
-        console.log(startDate)
-        let start = startDate.split(" ").slice(0, 3).join(" ");
-        let end = endDate.split(" ").slice(0, 3).join(" ");
-        setCheckoutTime({ ...checkoutTime, start: start, end: end });
+    const { startDate, endDate } = useSelector(state => state.Search)
+    let start = Date().toString().split(" ").slice(0, 3).join(" ")
+    let date = new Date();
+    date.setDate(date.getDate() + 1);
+    let end = date.toString().split(" ").slice(0, 3).join(" ")
+    const handleCheckInOut = ({ start, end }) => {
+
         setShowDatePicker(!showDatePicker)
     }
     return (
         <div>
-            <input className={styles.input} type="text" onClick={() => setShowDatePicker(!showDatePicker)} />
-            {/* <input type="text" onClick={() => setShowDatePicker(!showDatePicker)} /> */}
+            <input onChange={() => console.log(startDate)} className={styles.input} value={startDate ? `${startDate}  -  ${endDate}` : `${start}  -  ${end}`} type="text" onClick={() => setShowDatePicker(!showDatePicker)} />
             {showDatePicker && <DateRange onOkClick={handleCheckInOut} />}
         </div>
     )

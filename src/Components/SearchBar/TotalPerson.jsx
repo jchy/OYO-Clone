@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import IconButton from '@mui/material/IconButton';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import { useDispatch } from 'react-redux';
+import { totalNoGuest } from '../../redux/Search/action'
 
-const TotalPerson = ({ roomNo, handleClickShow }) => {
+const TotalPerson = ({ roomNo }) => {
     const [personPerRoom, setPersonPerRoom] = useState(1)
+    const dispatch = useDispatch()
     const handleClick = (val) => {
-        handleClickShow(val)
+        dispatch(totalNoGuest({ val }))
         setPersonPerRoom(prev => prev + val)
-
     }
+    console.log(personPerRoom)
     return (
         <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
             <div>

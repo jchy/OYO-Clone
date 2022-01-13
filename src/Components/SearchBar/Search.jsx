@@ -12,7 +12,10 @@ const theme = createTheme({
                 root: {
                     height: '6vh',
                     width: '9vw',
-                    backgroundColor: '#1ab64f'
+                    backgroundColor: '#1ab64f',
+                    '&:hover': {
+                        background: "#1ab64f",
+                    }
                 },
             },
         },
@@ -29,7 +32,7 @@ const Search = () => {
                 <CheckInOut />
                 <People />
                 <ThemeProvider theme={theme}>
-                    <Button variant="contained">Search</Button>
+                    <Button variant="contained" >Search</Button>
                 </ThemeProvider>
             </div>
         </div>
