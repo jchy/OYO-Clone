@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Hotel from "../pages/Hotel";
+import HotelRoomDetails from "../pages/HotelRoomDetails";
 
 const AllRoutes = () => {
   return (
@@ -14,6 +15,9 @@ const AllRoutes = () => {
       </Route>
       <Route exact path="/oyorooms">
         <Hotel />
+      </Route>
+      <Route exact path="/oyorooms/:city/:id">
+        <HotelRoomDetails />
       </Route>
     </div>
   );

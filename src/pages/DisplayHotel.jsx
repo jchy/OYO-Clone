@@ -6,6 +6,7 @@ import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import styles from "./todolist.module.css";
 import TextField from "@mui/material/TextField";
+import { Link } from "react-router-dom";
 // import {
 //   getHotelRoomFailure,
 //   getHotelRoomRequest,
@@ -34,7 +35,8 @@ function HotelItem({
   price,
   poster,
   images,
-  discount
+  discount,
+  id
 }) {
   return (
     <>
@@ -151,7 +153,7 @@ function HotelItem({
                     variant="out"
                     style={{ color: "balck", border: "1px solid black" }}
                   >
-                    View Details
+                    <Link to={`/oyorooms/${city}/${id}`}>Show more info</Link>
                   </Button>
                   <Button
                     variant="contained"
@@ -218,34 +220,10 @@ function DisplayHotel() {
       return hotelDataArray;
   }
 
-  // const handleBangaloreClick = (e) => {
-  //   hotelDataArray.filter((hotels) => hotels.city === "Bangalore");
-  // };
-
   const handleFilterClick = (e) => {
     setFilterBy(e.target.textContent);
     console.log(filterBy);
   };
-
-  // let [x,setX] = useState([]);
-  // useEffect(() => {
-  //   switch (filterBy) {
-  //     case "Bangalore": {
-  //       console.log("hello");
-  //       hotelDataArray = hotelDataArray.filter(
-  //         (hotels) => hotels.city === "Bangalore"
-  //       );
-  //       break;
-  //     }
-  //     case "Delhi": {
-  //       hotelDataArray.filter((hotels) => hotels.city === "Delhi");
-  //       break;
-  //     }
-  //     default: {
-  //       return hotelDataArray;
-  //     }
-  //   }
-  // }, [filterBy]);
 
   return (
     <>
