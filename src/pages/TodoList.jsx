@@ -4,6 +4,9 @@ import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
+// import Stack from "@mui/material/Stack";
+// import Button from "@mui/material/Button";
+
 // import PhotoCameraFrontIcon from "@mui/icons-material/PhotoCameraFront";
 // import styles from "./todolist.module.css";
 import {
@@ -15,7 +18,7 @@ import {
 } from "../redux/app/action";
 import { getTodos } from "./api";
 import Button from "@mui/material/Button";
-// import Stack from "@mui/material/Stack";
+import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
@@ -104,29 +107,59 @@ function TodoItem({
             </div>
             <div style={{ display: "flex" }}>
               <div>
-                <span
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "700",
-                    lineHeight: "24px",
-                    color: "rgb(238,42,35)"
-                  }}
-                >
-                  ₹{price}
-                </span>
-                <span
-                  style={{
-                    textDecoration: "line-through",
-                    fontSize: "10px",
-                    lineHeight: "25px",
-                    color: "rgb(180,186,188)"
-                  }}
-                >
-                  ₹{((price * 100) / (100 - discount)).toFixed(2)}
-                </span>
-                <span style={{ color: "rgb(244,165,34)" }}>
-                  {discount}% off
-                </span>
+                <div>
+                  <p style={{ lineHeight: "5px" }}>
+                    <span
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "700",
+                        lineHeight: "24px",
+                        color: "rgb(238,42,35)"
+                      }}
+                    >
+                      ₹{price}
+                    </span>
+                    <span
+                      style={{
+                        textDecoration: "line-through",
+                        fontSize: "10px",
+                        lineHeight: "25px",
+                        color: "rgb(180,186,188)"
+                      }}
+                    >
+                      ₹{((price * 100) / (100 - discount)).toFixed(2)}
+                    </span>
+                    <span style={{ color: "rgb(244,165,34)" }}>
+                      {discount}% off
+                    </span>
+                  </p>
+                </div>
+                <div>
+                  <p
+                    style={{
+                      color: "rgb(163,169,172)",
+                      fontSize: "12px"
+                    }}
+                  >
+                    per room per night
+                  </p>
+                </div>
+              </div>
+              <div style={{ marginLeft: "40px" }}>
+                <Stack direction="row" spacing={2}>
+                  <Button
+                    variant="out"
+                    style={{ color: "balck", border: "1px solid black" }}
+                  >
+                    View Details
+                  </Button>
+                  <Button
+                    variant="contained"
+                    style={{ background: "rgb(25,181,79)" }}
+                  >
+                    Book Now
+                  </Button>
+                </Stack>
               </div>
             </div>
           </div>
