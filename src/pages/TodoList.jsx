@@ -5,7 +5,7 @@ import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import styles from "./todolist.module.css";
-// import Box from "@mui/material/Box";
+import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import TextField from "@mui/material/TextField";
 import {
   getTodosFailure,
@@ -22,22 +22,6 @@ import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
-import PopularityBtn from "./PopularityBtn";
-
-// function FadeMenu() {
-//   const [anchorEl, setAnchorEl] = React.useState(null);
-//   const open = Boolean(anchorEl);
-//   const handleClick = (event) => {
-//     setAnchorEl(event.currentTarget);
-//   };
-//   const handleClose = (event) => {
-//     console.log(event.target.textContent);
-//     setAnchorEl(null);
-//   };
-
 function valuetext(value) {
   return `${value}`;
 }
@@ -209,16 +193,50 @@ function TodoList() {
 
   return (
     <>
-      <div style={{ display: "flex", padding: "20px", textAlign: "left" }}>
-        <div style={{ width: "20%" }}>
+      <div
+        style={{
+          background: "rgb(222,150,64)",
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <div>
+          <span style={{ fontSize: "30px" }}>⚠</span>
+        </div>
+        <div style={{ padding: "12px" }}>
+          <span style={{ fontSize: "12px", lineHeight: "16px" }}>
+            Please check the travel advisory issued by the concerned state
+            government/local authorities before booking, as some places may have
+            COVID-19 related travel/lodging restrictions.
+          </span>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          padding: "20px",
+          textAlign: "left"
+        }}
+      >
+        <div
+          style={{
+            width: "20%",
+            borderRight: "1px solid grey",
+            paddingRight: "20px"
+          }}
+        >
           <div>
             <h2>Filters</h2>
           </div>
           <div>
             <h5>Popular locations in Delhi, India</h5>
           </div>
-          <div>
-            <input type="text" placeholder="Search..." />
+          <div style={{ margin: "10px" }}>
+            <input
+              type="text"
+              placeholder="Search..."
+              style={{ padding: "10px" }}
+            />
           </div>
           <div style={{ margin: "10px" }}>
             <Button
@@ -287,7 +305,9 @@ function TodoList() {
                 style={{
                   background: "none",
                   color: "red",
-                  border: "none"
+                  border: "none",
+                  fontSize: "14px",
+                  fontWeight: "600"
                 }}
               >
                 + View More
@@ -368,7 +388,9 @@ function TodoList() {
                   style={{
                     background: "none",
                     color: "red",
-                    border: "none"
+                    border: "none",
+                    fontSize: "14px",
+                    fontWeight: "600"
                   }}
                 >
                   + View More
@@ -386,32 +408,114 @@ function TodoList() {
                 fontSize: "12"
               }}
             >
-              <div>
-                <input type="checkbox" name="OYO Rooms" label="Oyo" />{" "}
-                <span style={{ fontWeight: "600" }}> OYO Rooms</span> - Super
-                affordable stays with essential aminities
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "5px" }}>
+                  <input
+                    type="checkbox"
+                    name="OYO Rooms"
+                    label="Oyo"
+                    style={{
+                      height: "18px",
+                      width: "18px",
+                      cursor: "pointer"
+                    }}
+                  />{" "}
+                </div>
+                <div>
+                  <span style={{ fontWeight: "600" }}> OYO Rooms</span>
+                  <span style={{ lineHeight: "25px", fontSize: "14px" }}>
+                    - Super affordable stays with essential aminities
+                  </span>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" name="OYO Rooms" label="Oyo" />{" "}
-                <span style={{ fontWeight: "600" }}> Premium</span> - Hotel at
-                prime location and premium aminities
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "5px" }}>
+                  <input
+                    type="checkbox"
+                    name="OYO Rooms"
+                    label="Oyo"
+                    style={{
+                      height: "18px",
+                      width: "18px",
+                      cursor: "pointer"
+                    }}
+                  />{" "}
+                </div>
+                <div>
+                  <span style={{ fontWeight: "600" }}> Premium</span>
+                  <span style={{ lineHeight: "25px", fontSize: "14px" }}>
+                    - Hotel at prime location and premium aminities
+                  </span>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" name="OYO Rooms" label="Oyo" />{" "}
-                <span style={{ fontWeight: "600" }}> Townhouse </span> - Your
-                friendly, premium neighbourhood hotel-Serviced by OYO
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "5px" }}>
+                  <input
+                    type="checkbox"
+                    name="OYO Rooms"
+                    label="Oyo"
+                    style={{
+                      height: "18px",
+                      width: "18px",
+                      cursor: "pointer"
+                    }}
+                  />{" "}
+                </div>
+                <div>
+                  <span style={{ fontWeight: "600" }}> Townhouse </span>
+                  <span style={{ lineHeight: "25px", fontSize: "14px" }}>
+                    - Your friendly, premium neighbourhood hotel-Serviced by OYO
+                  </span>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" name="OYO Rooms" label="Oyo" />{" "}
-                <span style={{ fontWeight: "600" }}> Flagship </span> -
-                Affordable hotels at prime locations - Serviced by OYO
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "5px" }}>
+                  <input
+                    type="checkbox"
+                    name="OYO Rooms"
+                    label="Oyo"
+                    style={{
+                      height: "18px",
+                      width: "18px",
+                      cursor: "pointer"
+                    }}
+                  />{" "}
+                </div>
+                <div>
+                  <span style={{ fontWeight: "600" }}> Flagship </span>
+                  <span style={{ lineHeight: "25px", fontSize: "14px" }}>
+                    - Affordable hotels at prime locations - Serviced by OYO
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <input type="checkbox" name="OYO Rooms" label="Oyo" />{" "}
-                <span style={{ fontWeight: "600" }}> OYOX Design </span> -
-                Beautiful designed private crafted for the traveller who craves
-                comfort
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "5px" }}>
+                  <input
+                    type="checkbox"
+                    name="OYO Rooms"
+                    label="Oyo"
+                    style={{
+                      height: "18px",
+                      width: "18px",
+                      cursor: "pointer"
+                    }}
+                  />{" "}
+                </div>
+                <div>
+                  <span
+                    style={{
+                      fontWeight: "600"
+                    }}
+                  >
+                    {" "}
+                    OYOX Design{" "}
+                  </span>{" "}
+                  <span style={{ lineHeight: "25px", fontSize: "14px" }}>
+                    - Beautiful designed private crafted for the traveller who
+                    craves comfort
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -421,7 +525,9 @@ function TodoList() {
                 style={{
                   background: "none",
                   color: "red",
-                  border: "none"
+                  border: "none",
+                  fontSize: "14px",
+                  fontWeight: "600"
                 }}
               >
                 + View More
@@ -447,7 +553,9 @@ function TodoList() {
                 style={{
                   background: "none",
                   color: "red",
-                  border: "none"
+                  border: "none",
+                  fontSize: "14px",
+                  fontWeight: "600"
                 }}
               >
                 + View More
@@ -483,7 +591,9 @@ function TodoList() {
               style={{
                 background: "none",
                 color: "red",
-                border: "none"
+                border: "none",
+                fontSize: "14px",
+                fontWeight: "600"
               }}
             >
               + View More
@@ -526,7 +636,8 @@ function TodoList() {
         <div
           style={{
             width: "80%",
-            margin: "auto"
+            margin: "auto",
+            paddingLeft: "20px"
           }}
         >
           {isLoading && <h3>Loading...</h3>}
