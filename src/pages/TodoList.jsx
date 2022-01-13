@@ -49,7 +49,11 @@ function TodoItem({
             <img src={images[2]} alt="img" height="95px" width="120px" />
           </div>
           <div style={{ marginLeft: "40px", textAlign: "left" }}>
-            <h2>{name}</h2>
+            <div>
+              <span style={{ fontSize: "20px", fontWeight: "700" }}>
+                {name}
+              </span>
+            </div>
             <p>{location}</p>
             <div style={{ display: "flex" }}>
               <div>
