@@ -187,7 +187,7 @@ function TodoItem({
 }
 
 function TodoList() {
-  const [mail, setMail] = React.useState("abc@gmail.com");
+  const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const handleMailChange = (event) => {
     setMail(event.target.value);
   };
@@ -209,7 +209,7 @@ function TodoList() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", padding: "20px" }}>
         <div style={{ width: "20%" }}>
           <div>
             <h2>Filters</h2>
@@ -587,13 +587,25 @@ function TodoList() {
                   autoComplete="off"
                 >
                   <TextField
-                    id="outlined-name"
                     label="Your email"
                     value={mail}
                     onChange={handleMailChange}
-                    placeholder="e.g., john@email.com"
                   />
                 </Box>
+              </div>
+              <div style={{ padding: "10px" }}>
+                <Button
+                  variant="outlined"
+                  style={{
+                    background: "red",
+                    color: "white",
+                    border: "1px solid red",
+                    padding: "13px",
+                    width: "150px"
+                  }}
+                >
+                  Notify me
+                </Button>
               </div>
             </div>
           </div>
