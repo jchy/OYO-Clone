@@ -193,13 +193,29 @@ function DisplayHotel() {
 
   const handleSortBy = (e) => {
     setSortBy(e.target.value);
-    sortBySelcetedParameter();
   };
 
-  const sortBySelcetedParameter = () => {
-    hotelDataArray.sort((a, b) => a.rating > b.rating);
-    console.log(hotelDataArray, "sorted");
-  };
+  switch (sortBy) {
+    case "rating": {
+      hotelDataArray.sort((a, b) => a.rating - b.rating);
+      break;
+    }
+    case "lowtohigh": {
+      hotelDataArray.sort((a, b) => a.price - b.price);
+      break;
+    }
+    case "hightolow": {
+      hotelDataArray.sort((a, b) => b.price - a.price);
+      break;
+    }
+    case "popularity": {
+      hotelDataArray.sort((a, b) => a.popularity - b.popularity);
+      break;
+    }
+    default:
+      return hotelDataArray;
+  }
+  // };
 
   return (
     <>
