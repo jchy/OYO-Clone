@@ -6,14 +6,15 @@ import Navbar from "./Components/Navbar";
 import AllRoutes from "./route/AllRoutes";
 
 export default function App() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
+  // const isAuth = useSelector((state) => state.auth.isAuth);
 
-  return isAuth ? (
+  return (
     <div className="App">
       <Navbar />
       <AllRoutes />
     </div>
-  ) : (
-    <Login />
   );
 }
+// : (
+//   <Login />
+// );

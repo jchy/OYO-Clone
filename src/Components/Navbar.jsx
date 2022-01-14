@@ -17,6 +17,9 @@ const Navbar = () => {
       <Link className={style.navLink} to="/oyorooms">
         Hotels
       </Link>
+      <Link className={style.navLink} to="/login-signup">
+        Login/Signup
+      </Link>
     </div>
   );
 };

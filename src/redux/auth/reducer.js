@@ -18,6 +18,14 @@ function reducer(state = initState, action) {
         token: action.payload.token
       };
     }
+    case authConstants.LOGOUT_SUCCESS: {
+      saveData("token", action.payload.token);
+      return {
+        ...state,
+        isAuth: false,
+        token: action.payload.token
+      };
+    }
     default:
       return state;
   }
