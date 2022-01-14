@@ -11,7 +11,7 @@ const InputPlace = () => {
     }, [val])
     return (
         <div>
-            <input value={val} onChange={(e) => { setVal(e.target.value) }} style={{ height: '5vh', width: '17vw', fontSize: 'large' }} type="text" />
+            <input value={val} onChange={(e) => { setVal(e.target.value) }} style={{ height: '5vh', width: '17vw', fontSize: 'large', fontWeight: 'bold' }} type="text" />
         </div>
     )
 }

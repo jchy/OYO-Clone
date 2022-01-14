@@ -1,6 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
 import "./PaymentStyle.css";
+import { useSelector } from "react-redux";
+
 
 const PayImgDiv = styled.div`
   width: 80px;
@@ -16,15 +17,14 @@ const PayImgDiv = styled.div`
 `;
 
 export function PaymentSide({ initVar, payDataDetail, payImg }) {
-  const [payData] = useState(initVar);
-
+  const { room, diff, startDate, endDate, guest } = useSelector(state => state.Search)
   return (
     <div className="paymentB1Side">
       <div>
         <div>
           <div className="paymentSideHead">{payDataDetail.name}</div>
           <div className="paymentSideNew">NEW</div>
-          <div className="paymentSideDays">{payData.days} Nights</div>
+          <div className="paymentSideDays">{diff} Nights</div>
         </div>
         <PayImgDiv>
           <img src={payImg[0]} alt="" />
@@ -33,20 +33,20 @@ export function PaymentSide({ initVar, payDataDetail, payImg }) {
       <div className="margin30">
         <div className="paySideIcon paySideFont14">
           <img src="/Images/Payment/Group 24.svg" alt="" />
-          {payData.date}
+          {startDate ? `${startDate} - ${endDate}` : "Thu, 14 Oct - Fri, 15 Oct"}
         </div>
-        <div className="paySideFont14">{payData.room}</div>
+        <div className="paySideFont14">{`${room} Room, ${guest} Guests`}</div>
       </div>
       <div className="margin30">
         <div className="paySideIcon paySideFont14">
           <img src="/Images/Payment/Type.svg" alt="" />
-          {payData.type}
+          {"SPOT ON NON-AC"}
         </div>
       </div>
       <div className="margin20">
         <div>Room price for 1 Night X 2 Guests</div>
         <div className="paySideFont14SlightBold">
-          ₹{payDataDetail.price * 3}
+          ₹{payDataDetail.price * 3 * room * diff}
         </div>
       </div>
       <div className="margin20">

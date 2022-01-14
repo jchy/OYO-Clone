@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.2.5",
@@ -19,6 +20,8 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.3",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.3"

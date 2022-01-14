@@ -1,6 +1,10 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from 'redux-devtools-extension';
 import searchReducer from './Search/reducer'
+import CheckoutReducer from './Checkout/reducer'
 
-const rootReducer = combineReducers({ Search: searchReducer });
+const rootReducer = combineReducers({ Search: searchReducer, Checkout: CheckoutReducer });
 
-export const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

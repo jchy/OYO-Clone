@@ -1,0 +1,5 @@
+export const appConstants = {
+    GET_DATA_REQUEST: "GET_DATA_REQUEST",
+    GET_DATA_SUCESS: "GET_DATA_SUCESS",
+    GET_DATA_FAILURE: "GET_DATA_FAILURE"
+};
