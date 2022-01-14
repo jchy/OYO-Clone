@@ -9,7 +9,7 @@ function Login() {
     const action = loginSuccess(Date.now());
     dispatch(action);
   };
-  let auth = useSelector((state) => state.auth, shallowEqual);
+  let auth = useSelector((state) => state.auth.isAuth, shallowEqual);
 
   if (auth) {
     return <Redirect to="/" />;
