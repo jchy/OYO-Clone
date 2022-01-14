@@ -1,7 +1,8 @@
 import "./styles.css";
-import Search from './Components/SearchBar/Search'
-import { PaymentMain } from './Components/Payment/PaymentMain'
-import { PaymentSide } from './Components/Payment/PaymentSide'
+// import Search from './Components/SearchBar/Search'
+// import { PaymentMain } from './Components/Payment/PaymentMain'
+// import { PaymentSide } from './Components/Payment/PaymentSide'
+import HomeSearch from "./Components/SearchBar/HomeSearch";
 
 // var initVar = {
 //   days: "1",
@@ -33,7 +34,8 @@ import { PaymentSide } from './Components/Payment/PaymentSide'
 export default function App() {
   return (
     <div className="App">
-      <Search />
+      {/* <Search /> */}
+      <HomeSearch />
       {/* <PaymentSide
         initVar={initVar}
         payImg={payDataDetail.images}

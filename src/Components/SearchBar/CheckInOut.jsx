@@ -10,7 +10,7 @@ const CheckInOut = () => {
     let date = new Date();
     date.setDate(date.getDate() + 1);
     let end = date.toString().split(" ").slice(0, 3).join(" ")
-    const handleCheckInOut = ({ start, end }) => {
+    const handleCheckInOut = () => {
 
         setShowDatePicker(!showDatePicker)
     }

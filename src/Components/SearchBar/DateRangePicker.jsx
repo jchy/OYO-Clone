@@ -35,9 +35,8 @@ const DateRange = ({ onOkClick }) => {
 		const diffTime = Math.abs(startDate - endDate);
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-
 		dispach(selectDateRange({ start, end, diffDays }))
-		onOkClick({ start: start, end: end })
+		onOkClick()
 	}
 
 	return (
@@ -46,6 +45,7 @@ const DateRange = ({ onOkClick }) => {
 				showSelectionPreview={false}
 				showMonthAndYearPickers={false}
 				months={2}
+				minDate={new Date()}
 				direction='horizontal'
 				ranges={[selectionRange]}
 				onChange={handleSelect}

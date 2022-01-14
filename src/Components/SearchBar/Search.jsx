@@ -25,16 +25,13 @@ const theme = createTheme({
 
 const Search = () => {
     return (
-        <div style={{ backgroundColor: '#de273d', height: '24vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start' }}>
-            <h1 style={{ color: 'white' }}>Over 157,000 hotels and homes across 35 countries</h1>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <InputPlace />
-                <CheckInOut />
-                <People />
-                <ThemeProvider theme={theme}>
-                    <Button variant="contained" >Search</Button>
-                </ThemeProvider>
-            </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <InputPlace />
+            <CheckInOut />
+            <People />
+            <ThemeProvider theme={theme}>
+                <Button variant="contained" >Search</Button>
+            </ThemeProvider>
         </div>
     )
 }
