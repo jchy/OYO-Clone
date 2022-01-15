@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import WifiIcon from "@mui/icons-material/Wifi";
+import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
+import ElevatorIcon from "@mui/icons-material/Elevator";
 
 const getDetails = () => {
   return fetch("https://oyo-server.herokuapp.com/hotel")
@@ -46,7 +49,7 @@ function UserDetails() {
         // caption: "Slide 4"
       }
     ];
-  }, [itemDetails.id]);
+  }, [roomDetails]);
   console.log(roomDetails);
 
   let { isLoading, isError } = useSelector((state) => state.app, shallowEqual);
@@ -73,7 +76,50 @@ function UserDetails() {
         </div>
       </div>
       <div>
-        <h2>giii</h2>
+        {roomDetails.map((i) => (
+          <>
+            <h2>{i.name}</h2>
+            <p>{i.location}</p>
+            <h2>Description</h2>
+            <span>{i.descripition}</span>
+            <p>Read more</p>
+            <div>
+              <h2>Amenities</h2>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <p>🛏 AC</p>
+              </div>
+              <div>
+                <p>🚘 Parking Facility</p>{" "}
+              </div>
+              <div>
+                {" "}
+                <p>🙏 Reception</p>{" "}
+              </div>
+            </div>
+            <div style={{ display: "flex" }}>
+              <div>
+                <p>
+                  <WifiIcon /> Free Wifi
+                </p>
+              </div>
+              <div>
+                <p>📺 TV</p>
+              </div>
+              <div>
+                <p>
+                  <CameraswitchIcon /> CCTV Camera
+                </p>
+              </div>
+              <div>
+                <p>
+                  <ElevatorIcon /> Elevator
+                </p>
+              </div>
+            </div>
+          </>
+        ))}
       </div>
     </>
   );
