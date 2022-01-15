@@ -1,0 +1,13 @@
+.head {
+    color: #EE2E24;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.head > h1 {
+    font-size: 200px;
+}
+.head > h3 {
+    font-size: 100px;
+    padding-top: 100px;
+}
