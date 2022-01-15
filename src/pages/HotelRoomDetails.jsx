@@ -74,104 +74,138 @@ function UserDetails() {
       <div>
         {roomDetails.map((i) => (
           <>
-          <div style={{display: 'flex', flexDirection:"column", textAlign: "left"}}>
-            <div style={{display: "flex"}}>
-              <div>
-                <h2>{i.name}</h2>
-                <p>{i.location}</p>
-              </div>
-              <div>
-                <h3>{i.rating}</h3>
-              </div>
-            </div>
-            <div style={{textAlign: "left", width: "50%"}}>
-            <h2>Description</h2>
-            <p>{i.descripition}</p>
-            <div style={{color:"red"}}>
-            <h3>Read more</h3>
-            </div>
-            </div>
-            <div>
-              <h2>Amenities</h2>
-            </div>
-            <div style={{ display: "flex", gap:"2rem" }}>
-              <div>
-                <p>🛏 AC</p>
-              </div>
-              <div>
-                <p>🚘 Parking Facility</p>{" "}
-              </div>
-              <div>
-                {" "}
-                <p>🙏 Reception</p>{" "}
-              </div>
-            </div>
-            <div style={{ display: "flex", gap:"2rem" }}>
-              <div>
-                <p>
-                  <WifiIcon /> Free Wifi
-                </p>
-              </div>
-              <div>
-                <p>📺 TV</p>
-              </div>
-              <div>
-                <p>
-                  <CameraswitchIcon /> CCTV Camera
-                </p>
-              </div>
-              <div>
-                <p>
-                  <ElevatorIcon /> Elevator
-                </p>
-              </div>
-              
-          </div>
-          <div style={{color:"red"}}>
-            <h3>Show More</h3>
-          </div>
-          <div>
-            <div>
-              <h2>Choose your room</h2>
-            </div>
-            <div>
-              <div>
-                <p>★ SELECTED CATEGORY</p>
-              </div>
-              <div style={{display: "flex"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "left",
+                paddingLeft: "20px"
+              }}
+            >
+              <div style={{ display: "flex" }}>
                 <div>
-                <div>
-                  <h2>Classic (2X)</h2>
-                  <p>Room size: 156 sqft</p>
-                </div>
-                <div style={{display: "flex", gap:"1rem" }}>
-                <div>
-                <p>
-                  <WifiIcon /> Free Wifi
-                </p>
-              </div>
-              <div>
-                <p>📺 TV</p>
-              </div>
-              <div>
-                <p>
-                  <CameraswitchIcon /> CCTV Camera
-                </p>
-              </div>
-              <div>
-                <p>
-                  <ElevatorIcon /> Elevator
-                </p>
-              </div>
-                </div>
+                  <h2>{i.name}</h2>
+                  <p>{i.location}</p>
                 </div>
                 <div>
-              <img src={i.images[0]} alt="img" height="160px"/>
-            </div>
+                  <h3>{i.rating}</h3>
+                </div>
+              </div>
+              <div style={{ textAlign: "left", width: "50%" }}>
+                <h2>Description</h2>
+                <p>{i.descripition}</p>
+                <div style={{ color: "red" }}>
+                  <h3>Read more</h3>
+                </div>
+              </div>
+              <div>
+                <h2>Amenities</h2>
+              </div>
+              <div style={{ display: "flex", gap: "2rem" }}>
+                <div>
+                  <p>🛏 AC</p>
+                </div>
+                <div>
+                  <p>🚘 Parking Facility</p>{" "}
+                </div>
+                <div>
+                  {" "}
+                  <p>🙏 Reception</p>{" "}
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: "2rem" }}>
+                <div>
+                  <p>
+                    <WifiIcon /> Free Wifi
+                  </p>
+                </div>
+                <div>
+                  <p>📺 TV</p>
+                </div>
+                <div>
+                  <p>
+                    <CameraswitchIcon /> CCTV Camera
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <ElevatorIcon /> Elevator
+                  </p>
+                </div>
+              </div>
+              <div style={{ color: "red" }}>
+                <h3>Show More</h3>
+              </div>
+              <div >
+                <div>
+                  <h2>Choose your room</h2>
+                </div>
+                <div style={{ border: "1px solid rgb(215,215,215)", width: "45%", borderRadius: "20px"}}>
+                  <div style={{ background:"rgb(179,179,195)"}}>
+                    <p>★ SELECTED CATEGORY</p>
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <div>
+                      <div>
+                        <h2>Classic (2X) ✅</h2>
+                        <p>Room size: 156 sqft</p>
+                      </div>
+                      <div style={{ display: "flex", gap: "1rem" }}>
+                        <div>
+                          <p>
+                            <WifiIcon /> Free Wifi
+                          </p>
+                        </div>
+                        <div>
+                          <p>📺 TV</p>
+                        </div>
+                        <div>
+                          <p>
+                            <CameraswitchIcon /> CCTV Camera
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            <ElevatorIcon /> Elevator
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ padding: "10px", paddingLeft:"40px" }}>
+                      <img src={i.images[0]} alt="img" height="160px" style={{borderRadius:"10px"}}/>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <p style={{ lineHeight: "5px" }}>
+                      <span
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                          lineHeight: "24px",
+                          // color: "rgb(238,42,35)",
+                        }}
+                      >
+                        ₹{i.price}
+                      </span>
+                      <span
+                        style={{
+                          textDecoration: "line-through",
+                          fontSize: "16px",
+                          lineHeight: "25px",
+                          color: "rgb(180,186,188)",
+                        }}
+                      >
+                        ₹{((i.price * 100) / (100 - i.discount)).toFixed(2)}
+                      </span>
+                      <span style={{ textAlign: "right", width: "150px", marginLeft:"40%"}}>
+                        <button style={{ cursor: "pointer", border: "1px solid rgb(215,215,215)", fontSize: "12px", fontWeight:"700", padding: "10px",width: "150px", borderRadius: "5px"}}> ✅ SELECTED</button>
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
           </>
         ))}
       </div>
