@@ -33,21 +33,17 @@ function UserDetails() {
     });
     slideImages = [
       {
-        url: roomDetails[0]?.poster
-        // caption: "Slide 1"
+        url: roomDetails[0]?.poster,
       },
       {
-        url: roomDetails[0]?.images[1]
-        // caption: "Slide 2"
+        url: roomDetails[0]?.images[1],
       },
       {
-        url: roomDetails[0]?.images[2]
-        // caption: "Slide 3"
+        url: roomDetails[0]?.images[2],
       },
       {
-        url: roomDetails[0]?.images[3]
-        // caption: "Slide 4"
-      }
+        url: roomDetails[0]?.images[3],
+      },
     ];
   }, [roomDetails]);
   console.log(roomDetails);
@@ -65,7 +61,7 @@ function UserDetails() {
                   style={{
                     backgroundImage: `url(${slideImage.url})`,
                     height: "600px",
-                    width: "100%"
+                    width: "100%",
                   }}
                 >
                   {/* <span>{slideImage.caption}</span> */}
@@ -78,15 +74,27 @@ function UserDetails() {
       <div>
         {roomDetails.map((i) => (
           <>
-            <h2>{i.name}</h2>
-            <p>{i.location}</p>
+          <div style={{display: 'flex', flexDirection:"column", textAlign: "left"}}>
+            <div style={{display: "flex"}}>
+              <div>
+                <h2>{i.name}</h2>
+                <p>{i.location}</p>
+              </div>
+              <div>
+                <h3>{i.rating}</h3>
+              </div>
+            </div>
+            <div style={{textAlign: "left", width: "50%"}}>
             <h2>Description</h2>
-            <span>{i.descripition}</span>
-            <p>Read more</p>
+            <p>{i.descripition}</p>
+            <div style={{color:"red"}}>
+            <h3>Read more</h3>
+            </div>
+            </div>
             <div>
               <h2>Amenities</h2>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", gap:"2rem" }}>
               <div>
                 <p>🛏 AC</p>
               </div>
@@ -98,7 +106,7 @@ function UserDetails() {
                 <p>🙏 Reception</p>{" "}
               </div>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", gap:"2rem" }}>
               <div>
                 <p>
                   <WifiIcon /> Free Wifi
@@ -117,7 +125,53 @@ function UserDetails() {
                   <ElevatorIcon /> Elevator
                 </p>
               </div>
+              
+          </div>
+          <div style={{color:"red"}}>
+            <h3>Show More</h3>
+          </div>
+          <div>
+            <div>
+              <h2>Choose your room</h2>
             </div>
+            <div>
+              <div>
+                <p>★ SELECTED CATEGORY</p>
+              </div>
+              <div style={{display: "flex"}}>
+                <div>
+                <div>
+                  <h2>Classic (2X)</h2>
+                  <p>Room size: 156 sqft</p>
+                </div>
+                <div style={{display: "flex", gap:"1rem" }}>
+                <div>
+                <p>
+                  <WifiIcon /> Free Wifi
+                </p>
+              </div>
+              <div>
+                <p>📺 TV</p>
+              </div>
+              <div>
+                <p>
+                  <CameraswitchIcon /> CCTV Camera
+                </p>
+              </div>
+              <div>
+                <p>
+                  <ElevatorIcon /> Elevator
+                </p>
+              </div>
+                </div>
+                </div>
+                <div>
+              <img src={i.images[0]} alt="img" height="160px"/>
+            </div>
+              </div>
+            </div>
+          </div>
+          </div>
           </>
         ))}
       </div>
