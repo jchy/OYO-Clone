@@ -7,13 +7,6 @@ import ElevatorIcon from "@mui/icons-material/Elevator";
 import styles from "./todolist.module.css";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
-// import {
-//   getHotelRoomFailure,
-//   getHotelRoomRequest,
-//   getHotelRoomSuccess,
-//   removeHotelRoom,
-//   toggleHotelRoom
-// } from "../redux/app/action";
 import { getHotelRooms } from "./api";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
@@ -153,7 +146,12 @@ function HotelItem({
                     variant="out"
                     style={{ color: "balck", border: "1px solid black" }}
                   >
-                    <Link to={`/oyorooms/${city}/${id}`}>Show more info</Link>
+                    <Link
+                      to={`/oyorooms/${city}/${id}`}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      Show more info
+                    </Link>
                   </Button>
                   <Button
                     variant="contained"

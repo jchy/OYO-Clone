@@ -2,18 +2,18 @@
   display: flex;
   justify-content: left;
   gap: 1rem;
-  /* background-color: yellow; */
-  border: 1px solid grey;
-  padding: 20px;
+  border: 2px solid rgb(238, 238, 238);
 }
 .navLink {
   text-decoration: none;
-  color: aliceblue;
-  background-color: black;
-  padding: 10px;
-  border-radius: 10px;
+  color: black;
   font-size: 16px;
-  border: 2px solid blue;
+  margin-top: 1000px;
+}
+.navLink2 {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
 }
 .navLogo {
   text-align: left;
