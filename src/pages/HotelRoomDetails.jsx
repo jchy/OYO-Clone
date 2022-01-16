@@ -19,8 +19,10 @@ function UserDetails() {
   const [roomDetails, setRoomDetails] = useState([]);
   const itemDetails = useParams();
 
+  // const {city} = useSelector(state => state.Search);
+  
   const getDetails = () => {
-    return fetch("https://oyo-server.herokuapp.com/hotel")
+    return fetch(`https://oyo-server.herokuapp.com/hotel`)
       .then((res) => res.json())
       .then((res) => {
         setRoomDetails(
@@ -453,7 +455,7 @@ function UserDetails() {
                     }}
                   >
                     <Link
-                      to="/"
+                      to="/payment/1"
                       style={{
                         padding: "20px",
                         background: "green",

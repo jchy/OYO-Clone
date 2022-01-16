@@ -1,22 +1,6 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-
-// const Home = () => {
-//   const isAuth = useSelector((state) => state.auth.isAuth);
-
-//   if (!isAuth) {
-//     return <Redirect to="/login-signup" />;
-//   }
-//   return (
-//     <div>
-//       <h3>Home Page</h3>
-//     </div>
-//   );
-// };
-// export default Home;
-
-// import logo from './logo.svg';
-// import './App.css';
+import HomeSearch from "../Components/SearchBar/HomeSearch"
 import Footer from "../Components/footer/Footer";
 import { ToolTip } from '../Components/Tooltip';
 import {Banner,Banner1} from '../Components/banner/Banner';
@@ -30,6 +14,7 @@ function Home() {
   return (
     <div>
       <ToolTip/>
+      <HomeSearch />
       <Banner1/>
       <Banner/>
       <Notify/>

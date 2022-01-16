@@ -7,11 +7,11 @@ import {
   getHotelRoomSuccess
 } from "../redux/app/action";
 
-export const getHotelRooms = () => (dispatch) => {
+export const getHotelRooms = (city) => (dispatch) => {
   // pre fetch
   const requestAction = getHotelRoomRequest();
   dispatch(requestAction);
-  return fetch("https://oyo-server.herokuapp.com/hotel")
+  return fetch(`https://oyo-server.herokuapp.com/hotel?city=${city}`)
     .then((res) => res.json())
     .then((res) => {
       //success

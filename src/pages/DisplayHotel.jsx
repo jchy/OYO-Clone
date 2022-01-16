@@ -189,9 +189,9 @@ function DisplayHotel() {
   );
 
   const dispatch = useDispatch();
-
+  const {city} = useSelector(state => state.Search);
   useEffect(() => {
-    dispatch(getHotelRooms());
+    dispatch(getHotelRooms(city));
   }, []);
 
   const handleSortBy = (e) => {
