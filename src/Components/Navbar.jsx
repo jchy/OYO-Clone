@@ -6,7 +6,7 @@ import style from "./navbar.module.css";
 const Navbar = () => {
   return (
     <div className={style.nav}>
-      <Link to="/" style={{ paddingTop: "10px", paddingLeft: "5%" }}>
+      <Link to="/" style={{ width: "15%",paddingTop: "10px", paddingLeft: "5%" }}>
         <img src="./images/OYO_Logo.png" alt="" height="35px" width="90px" />
       </Link>
 
@@ -26,7 +26,7 @@ const Navbar = () => {
       <Link
         className={style.navLink2}
         to="/oyorooms"
-        style={{
+        style={{width: "15%",
           borderRight: "2px solid rgb(238,238,238)",
           paddingTop: "10px"
         }}
@@ -38,6 +38,7 @@ const Navbar = () => {
         className={style.navLink2}
         to="/oyorooms"
         style={{
+          width: "15%",
           borderRight: "2px solid rgb(238,238,238)",
           paddingTop: "10px"
         }}
@@ -48,7 +49,7 @@ const Navbar = () => {
       <Link
         className={style.navLink2}
         to="/login-signup"
-        style={{ textAlign: "center", paddingTop: "10px" }}
+        style={{ width: "20%",textAlign: "center", paddingTop: "10px" }}
       >
         <img src="./images/loginlogo.jpeg" alt="" height="35px" />
       </Link>
