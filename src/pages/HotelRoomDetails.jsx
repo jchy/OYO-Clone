@@ -8,9 +8,8 @@ import "react-slideshow-image/dist/styles.css";
 import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "../Components/footer/Footer";
-
 
 // var data = [];
 var slideImages = [];
@@ -32,10 +31,8 @@ function UserDetails() {
   };
 
   useEffect(() => {
-      getDetails();
-  },[]);
-
-  
+    getDetails();
+  }, []);
 
   slideImages = [
     {
@@ -59,8 +56,6 @@ function UserDetails() {
   //   setFlag(true);
   // }
   console.log(roomDetails);
-
-  
 
   let { isLoading, isError } = useSelector((state) => state.app, shallowEqual);
   if (isLoading) return <div>...loading</div>;
@@ -86,24 +81,34 @@ function UserDetails() {
       <div>
         {roomDetails.map((i) => (
           <div key={i.id}>
-            <div style={{ display: "flex", gap:"2rem", margin:"5%", marginTop: "20px"}}>
+            <div
+              style={{
+                display: "flex",
+                gap: "2rem",
+                margin: "5%",
+                marginTop: "20px",
+              }}
+            >
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   textAlign: "left",
                   paddingLeft: "20px",
-                  
+
                   width: "50%",
                 }}
               >
                 <div style={{ display: "flex" }}>
-                  <div >
+                  <div>
                     <h2>{i.name}</h2>
                     <p>{i.location}</p>
                   </div>
-                  <div style={{ marginLeft: "25px", paddingTop:"5px"}}>
-                    <h3>{i.rating}<span style={{color: "rgb(243,146,66)"}}>★</span></h3> 
+                  <div style={{ marginLeft: "25px", paddingTop: "5px" }}>
+                    <h3>
+                      {i.rating}
+                      <span style={{ color: "rgb(243,146,66)" }}>★</span>
+                    </h3>
                   </div>
                 </div>
                 <div style={{ textAlign: "left" }}>
@@ -263,11 +268,27 @@ function UserDetails() {
                 </div>
               </div>
               {/* Checkout section */}
-              <div style={{border:"1px solid rgb(240,240,240)"}}>
-                <div style={{background:"rgb(241,85,63)", padding:"10px", color:"white"}}>
-                  <span>LOG IN NOW TO GET EXCLUSIVE DEALS</span> 
+              <div style={{ border: "1px solid rgb(240,240,240)" }}>
+                <div
+                  style={{
+                    background: "rgb(241,85,63)",
+                    padding: "10px",
+                    color: "white",
+                  }}
+                >
+                  <span>LOG IN NOW TO GET EXCLUSIVE DEALS</span>
                   <span style={{ marginLeft: "60px" }}>
-                    <button style={{borderRadius: "4px", padding:"3px", color:"white",background:"rgb(247,139,123)", border:"1px solid rgb(247,139,123)" }}>LOGIN</button>
+                    <button
+                      style={{
+                        borderRadius: "4px",
+                        padding: "3px",
+                        color: "white",
+                        background: "rgb(247,139,123)",
+                        border: "1px solid rgb(247,139,123)",
+                      }}
+                    >
+                      LOGIN
+                    </button>
                   </span>
                 </div>
                 <div style={{ margin: "20px" }}>
@@ -289,12 +310,14 @@ function UserDetails() {
                           fontSize: "10px",
                           lineHeight: "25px",
                           color: "rgb(180,186,188)",
-                          marginLeft: "1rem"
+                          marginLeft: "1rem",
                         }}
                       >
                         ₹{((i.price * 100) / (100 - i.discount)).toFixed(2)}
                       </span>
-                      <span style={{ color: "rgb(246,178,75)" ,marginLeft: "1rem"}}>
+                      <span
+                        style={{ color: "rgb(246,178,75)", marginLeft: "1rem" }}
+                      >
                         {i.discount}% off
                       </span>
                     </p>
@@ -304,15 +327,24 @@ function UserDetails() {
                       style={{
                         color: "rgb(163,169,172)",
                         fontSize: "14px",
-                        textAlign: "left"
+                        textAlign: "left",
                       }}
                     >
                       Inclusive of all taxes
                     </p>
                   </div>
-                  <div style={{ display: "flex", border: "2px solid rgb(240,240,240)", boxShadow: "1px 1px 3px gray"}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      border: "2px solid rgb(240,240,240)",
+                      boxShadow: "1px 1px 3px gray",
+                    }}
+                  >
                     <div
-                      style={{ borderRight: "1px solid rgb(240,240,240)", padding: "10px" }}
+                      style={{
+                        borderRight: "1px solid rgb(240,240,240)",
+                        padding: "10px",
+                      }}
                     >
                       Sun, 16 Jan - Mon, 17 Jan
                     </div>
@@ -325,29 +357,60 @@ function UserDetails() {
                       1 Room, 2 Guests
                     </div>
                   </div>
-                  <div style={{ border: "2px solid rgb(240,240,240)", boxShadow: "1px 1px 3px gray", marginTop: "15px", padding: "10px" }}>Dluxe (3X)</div>
-                  <div style={{ display: "flex", gap: "16rem", margin:"20px", color: "rgb(34,34,34)" }}>
+                  <div
+                    style={{
+                      border: "2px solid rgb(240,240,240)",
+                      boxShadow: "1px 1px 3px gray",
+                      marginTop: "15px",
+                      padding: "10px",
+                    }}
+                  >
+                    Dluxe (3X)
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "16rem",
+                      margin: "20px",
+                      color: "rgb(34,34,34)",
+                    }}
+                  >
                     <div>OMOIND4 cupon applied</div>
                     <div>
                       ₹{((i.price * 100) / (100 - i.discount)).toFixed(2)}✅
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", gap: "12rem", margin:"20px", color: "rgb(34,34,34)" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "12rem",
+                      margin: "20px",
+                      color: "rgb(34,34,34)",
+                    }}
+                  >
                     <div>Savae 5% with Wizard membership</div>
                     <div>-₹52</div>
                   </div>
-                  <div style={{ display: "flex", textAlign: "left", marginLeft:"20px", background:"rgb(247,247,247)", gap:"10rem"}}>
-                    <div style={{ padding: "10px"}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      textAlign: "left",
+                      marginLeft: "20px",
+                      background: "rgb(247,247,247)",
+                      gap: "10rem",
+                    }}
+                  >
+                    <div style={{ padding: "10px" }}>
                       <p>Wizard Blue at s special price</p>
                       <p>Get additional benefits upto ₹1000</p>
                     </div>
                     <div style={{ display: "flex", padding: "10px" }}>
                       <div
                         style={{
-                          padding: "10px", 
+                          padding: "10px",
                           width: "80px",
-                          paddingTop:"0px"
+                          paddingTop: "0px",
                         }}
                       >
                         <p>₹99</p>
@@ -356,36 +419,72 @@ function UserDetails() {
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", textAlign: "left", gap:"17.5rem" }}>
-                    <div >
-                      <div style={{margin:"20px"}}>Your savings</div>
-                      <div style={{margin:"20px"}}>Total price</div>
-                      <div style={{margin:"20px"}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      textAlign: "left",
+                      gap: "17.5rem",
+                    }}
+                  >
+                    <div>
+                      <div style={{ margin: "20px" }}>Your savings</div>
+                      <div style={{ margin: "20px" }}>Total price</div>
+                      <div style={{ margin: "20px" }}>
                         <span>(Incl. of all taxes)</span>
                       </div>
                     </div>
                     <div>
-                      <div style={{margin:"20px"}}>
-                        ₹{((((i.price * 100) / (100 - i.discount)))-(i.price)).toFixed(2)}
+                      <div style={{ margin: "20px" }}>
+                        ₹
+                        {(
+                          (i.price * 100) / (100 - i.discount) -
+                          i.price
+                        ).toFixed(2)}
                       </div>
-                      <div style={{marginLeft:"20px"}}>
-                      ₹{i.price}
-                      </div>
+                      <div style={{ marginLeft: "20px" }}>₹{i.price}</div>
                     </div>
                   </div>
-                  <div style={{margin:"20px", background:"green", padding: "20px", borderRadius:"10px"}}>
-                  <Link to="/" style={{padding:"20px", background:"green", textDecoration:"none", color:"white", cursor: "pointer", fontSize:"18px", fontWeight:"700"}}>
-                     Continue to Book
-                  </Link>
+                  <div
+                    style={{
+                      margin: "20px",
+                      background: "green",
+                      padding: "20px",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <Link
+                      to="/"
+                      style={{
+                        padding: "20px",
+                        background: "green",
+                        textDecoration: "none",
+                        color: "white",
+                        cursor: "pointer",
+                        fontSize: "18px",
+                        fontWeight: "700",
+                      }}
+                    >
+                      Continue to Book
+                    </Link>
                   </div>
-                  <div style={{margin:"20px",color:"red", textAlign:"left"}}>
+                  <div
+                    style={{ margin: "20px", color: "red", textAlign: "left" }}
+                  >
                     Cancellation Policy ©️
                   </div>
-                  <div style={{margin:"20px",color:"red", textAlign:"left"}}>
+                  <div
+                    style={{ margin: "20px", color: "red", textAlign: "left" }}
+                  >
                     Follow safety measures advised at the hotel
                   </div>
-                  <div style={{margin:"20px",color:"red", textAlign:"left"}}>
-                   <span style={{color:"rgb(158,158,158)"}}> By proceeding, you agree to our</span> Guest Policies.
+                  <div
+                    style={{ margin: "20px", color: "red", textAlign: "left" }}
+                  >
+                    <span style={{ color: "rgb(158,158,158)" }}>
+                      {" "}
+                      By proceeding, you agree to our
+                    </span>{" "}
+                    Guest Policies.
                   </div>
                 </div>
               </div>
@@ -393,7 +492,7 @@ function UserDetails() {
           </div>
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
