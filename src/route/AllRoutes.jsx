@@ -17,6 +17,9 @@ const AllRoutes = () => {
       <Route exact path="/oyorooms">
         <Hotel />
       </Route>
+      <Route exact path="/oyoroomsk">
+        <Hotel />
+      </Route>
       <Route exact path="/login-signup">
         <Login />
       </Route>

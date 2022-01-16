@@ -10,14 +10,7 @@ import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import {Link} from "react-router-dom";
 
-const getDetails = () => {
-  return fetch("https://oyo-server.herokuapp.com/hotel")
-    .then((res) => res.json())
-    .then((res) => {
-      return res;
-    })
-    .catch((res) => {});
-};
+
 // var data = [];
 var slideImages = [];
 // HOOkS
@@ -25,29 +18,48 @@ function UserDetails() {
   const [data, setData] = useState([]);
   const [roomDetails, setRoomDetails] = useState([]);
   const itemDetails = useParams();
+
+  const getDetails = () => {
+    return fetch("https://oyo-server.herokuapp.com/hotel")
+      .then((res) => res.json())
+      .then((res) => {
+        setRoomDetails(
+          res?.filter((rooms) => rooms.id === parseInt(itemDetails.id))
+        );
+      })
+      .catch((res) => {});
+  };
+
   useEffect(() => {
-    getDetails().then((res) => {
-      setData(res);
-      setRoomDetails(
-        data?.filter((rooms) => rooms.id === parseInt(itemDetails.id))
-      );
-    });
-    slideImages = [
-      {
-        url: roomDetails[0]?.poster,
-      },
-      {
-        url: roomDetails[0]?.images[1],
-      },
-      {
-        url: roomDetails[0]?.images[2],
-      },
-      {
-        url: roomDetails[0]?.images[3],
-      },
-    ];
-  }, [roomDetails]);
+      getDetails();
+  },[]);
+
+  
+
+  slideImages = [
+    {
+      url: roomDetails[0]?.poster,
+    },
+    {
+      url: roomDetails[0]?.images[1],
+    },
+    {
+      url: roomDetails[0]?.images[2],
+    },
+    {
+      url: roomDetails[0]?.images[3],
+    },
+  ];
+
+  // if(roomDetails){
+  //   setFlag(null);
+  // }
+  // else{
+  //   setFlag(true);
+  // }
   console.log(roomDetails);
+
+  
 
   let { isLoading, isError } = useSelector((state) => state.app, shallowEqual);
   if (isLoading) return <div>...loading</div>;
@@ -72,7 +84,7 @@ function UserDetails() {
       </div>
       <div>
         {roomDetails.map((i) => (
-          <>
+          <div key={i.id}>
             <div style={{ display: "flex", gap:"2rem", margin:"5%", marginTop: "20px"}}>
               <div
                 style={{
@@ -361,7 +373,7 @@ function UserDetails() {
                     </div>
                   </div>
                   <div style={{margin:"20px", background:"green", padding: "20px", borderRadius:"10px"}}>
-                  <Link style={{padding:"20px", background:"green", textDecoration:"none", color:"white", cursor: "pointer", fontSize:"18px", fontWeight:"700"}}>
+                  <Link to="/" style={{padding:"20px", background:"green", textDecoration:"none", color:"white", cursor: "pointer", fontSize:"18px", fontWeight:"700"}}>
                      Continue to Book
                   </Link>
                   </div>
@@ -377,7 +389,7 @@ function UserDetails() {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </>

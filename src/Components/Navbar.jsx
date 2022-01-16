@@ -36,7 +36,7 @@ const Navbar = () => {
 
       <Link
         className={style.navLink2}
-        to="/oyorooms"
+        to="/oyoroomsk"
         style={{
           width: "15%",
           borderRight: "2px solid rgb(238,238,238)",
