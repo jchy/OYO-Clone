@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className={style.nav}>
       <Link to="/" style={{ width: "15%",paddingTop: "10px", paddingLeft: "5%" }}>
-        <img src="./images/OYO_Logo.png" alt="" height="35px" width="90px" />
+        <img src="./NavImages/OYO_Logo.png" alt="" height="35px" width="90px" />
       </Link>
 
       <Link
@@ -20,7 +20,7 @@ const Navbar = () => {
           paddingTop: "10px"
         }}
       >
-        <img src="./images/bmember.jpeg" alt="" height="45px" />
+        <img src="./NavImages/bmember.jpeg" alt="" height="45px" />
       </Link>
 
       <Link
@@ -31,7 +31,7 @@ const Navbar = () => {
           paddingTop: "10px"
         }}
       >
-        <img src="./images/listproplogo.jpeg" alt="" height="45px" />
+        <img src="./NavImages/listproplogo.jpeg" alt="" height="45px" />
       </Link>
 
       <Link
@@ -43,7 +43,7 @@ const Navbar = () => {
           paddingTop: "10px"
         }}
       >
-        <img src="./images/english.jpeg" alt="" height="30px" />
+        <img src="./NavImages/english.jpeg" alt="" height="30px" />
       </Link>
 
       <Link
@@ -51,7 +51,7 @@ const Navbar = () => {
         to="/login-signup"
         style={{ width: "20%",textAlign: "center", paddingTop: "10px" }}
       >
-        <img src="./images/loginlogo.jpeg" alt="" height="35px" />
+        <img src="./NavImages/loginlogo.jpeg" alt="" height="35px" />
       </Link>
     </div>
   );

@@ -15,6 +15,7 @@ import Slider from "@mui/material/Slider";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Footer from "../Components/footer/Footer";
 function valuetext(value) {
   return `${value}`;
 }
@@ -639,7 +640,7 @@ function DisplayHotel() {
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ display: "flex" }}>
             <div>
-              <img src="./images/w-logo.png" alt="img" height="30px" />
+              <img src="./NavImages/w-logo.png" alt="img" height="30px" />
             </div>
             <div>
               <p>Wizard Member OYOs</p>
@@ -788,6 +789,7 @@ function DisplayHotel() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

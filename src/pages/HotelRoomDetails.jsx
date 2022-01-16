@@ -9,6 +9,7 @@ import WifiIcon from "@mui/icons-material/Wifi";
 import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import {Link} from "react-router-dom";
+import Footer from "../Components/footer/Footer";
 
 
 // var data = [];
@@ -365,7 +366,7 @@ function UserDetails() {
                     </div>
                     <div>
                       <div style={{margin:"20px"}}>
-                        ₹{((i.price * 100) / (100 - i.discount)).toFixed(2)}
+                        ₹{((((i.price * 100) / (100 - i.discount)))-(i.price)).toFixed(2)}
                       </div>
                       <div style={{marginLeft:"20px"}}>
                       ₹{i.price}
@@ -392,6 +393,7 @@ function UserDetails() {
           </div>
         ))}
       </div>
+      <Footer/>
     </>
   );
 }

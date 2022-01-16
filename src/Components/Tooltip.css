@@ -1,0 +1,21 @@
+.tooltip{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(242,244,247,255);
+}
+.tooltip_city_name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(133, 127, 127);
+    padding: 5px;
+    margin: 5px;
+}
+.tooltip_city_name:hover{
+    background-color: #fffefe;
+    cursor: pointer;
+}
+.tooltip_city_name > .MuiSvgIcon-root {
+    color: rgb(133, 127, 127);
+}
