@@ -7,7 +7,7 @@ import {
   getHotelRoomSuccess
 } from "../redux/app/action";
 
-export const getHotelRooms = (city) => (dispatch) => {
+export const getHotelRooms = (city="Delhi") => (dispatch) => {
   // pre fetch
   const requestAction = getHotelRoomRequest();
   dispatch(requestAction);

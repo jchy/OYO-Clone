@@ -16,9 +16,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Footer from "../Components/footer/Footer";
-function valuetext(value) {
-  return `${value}`;
-}
+import Skeleton from '@mui/material/Skeleton';
 
 function HotelItem({
   name,
@@ -40,9 +38,9 @@ function HotelItem({
             <img src={poster} alt="img" height="76%" width="96%" />
           </div>
           <div style={{ width: "10%" }}>
-            <img src={images[1]} alt="img" height="95px" width="120px" />
-            <img src={images[0]} alt="img" height="95px" width="120px" />
-            <img src={images[2]} alt="img" height="95px" width="120px" />
+            <img src={images[1]} alt="img" height="112px" width="125px" />
+            <img src={images[0]} alt="img" height="112px" width="125px" />
+            <img src={images[2]} alt="img" height="112px" width="125px" />
           </div>
           <div style={{ marginLeft: "40px", textAlign: "left" }}>
             <div>
@@ -170,18 +168,33 @@ function HotelItem({
   );
 }
 
+function valuetext(value) {
+  return (value * 100);
+}
+
 function DisplayHotel() {
   const [mail, setMail] = React.useState("e.g. abc@gmail.com");
   const [sortBy, setSortBy] = useState("popularity");
   const [filterBy, setFilterBy] = useState("");
   const [bangaloreData, setBangaloreData] = useState([]);
+  const [start, setStart] = React.useState([0]);
+  const [end, setEnd] = React.useState([10000]);
+  const [value, setValue] = useState([0,1000]);
+
+
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
+
   const handleMailChange = (event) => {
     setMail(event.target.value);
   };
-  const [value, setValue] = React.useState([20, 37]);
+  // const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    setStart(newValue[0]*100);
+    setEnd(newValue[1]*100);
   };
   let { hotelDataArray, isLoading, isError } = useSelector(
     (state) => state.app,
@@ -359,10 +372,10 @@ function DisplayHotel() {
                   getAriaLabel={() => "Temperature range"}
                   value={value}
                   onChange={handleChange}
-                  valueLabelDisplay="auto"
                   getAriaValueText={valuetext}
                 />
               </Box>
+              Range : ₹{(start)} to ₹{(end)}
             </div>
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
@@ -678,7 +691,7 @@ function DisplayHotel() {
             paddingLeft: "20px"
           }}
         >
-          {isLoading && <h3>Loading...</h3>}
+          {isLoading && <Skeleton animation="wave" variant="circular" width={40} height={40} />}
           {isError && <h3> Something went wrong!</h3>}
 
           <div
@@ -717,9 +730,33 @@ function DisplayHotel() {
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
           <div style={{ height: "1960px", overflowY: "scroll" }}>
-            {hotelDataArray
+          {isLoading && <Skeleton
+              animation="wave"
+              height="500px"
+              width="80%"
+              style={{ marginBottom: 6 }}
+            />}
+            {  hotelDataArray.length ===0 && !isLoading && <div style={{textAlign: "center", margin:"20%"}}>
+              <div style={{ fontSize: "100px", color:"red", fontWeight: "bold" }}>
+                4oh!4
+              </div>
+              <div style={{color:"gray"}}>
+                <p>There is no property available for this search </p>
+                
+              </div>
+              <div style={{ color:"gray" }}>
+                <p>Book your next stay here</p>
+                
+              </div>
+              <div>
+                <Link to="/" style={{textDecoration:"none", padding: "10px", background:"green", color:"white"}}>
+                 Go To Homepage 
+                </Link>
+              </div>
+            </div> }
+            {  hotelDataArray
               .filter((elem) => {
-                if (elem.city === filterBy) {
+                if (elem.city === filterBy && (elem.price >= start) && (elem.price <= end)) {
                   return elem.city;
                 } else if (filterBy === "") {
                   return elem;
@@ -731,6 +768,14 @@ function DisplayHotel() {
               ))}
           </div>
           <hr style={{ border: ".2px solid rgb(224,224,224)" }} />
+
+          {isLoading && <Skeleton
+              animation="wave"
+              height="800px"
+              width="80%"
+              style={{ marginBottom: 6 }}
+            />} 
+            
           <div
             style={{
               border: "1px solid rgb(224,224,224)",

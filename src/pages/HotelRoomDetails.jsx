@@ -10,6 +10,7 @@ import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import { Link } from "react-router-dom";
 import Footer from "../Components/footer/Footer";
+import { Skeleton } from "@mui/material";
 
 // var data = [];
 var slideImages = [];
@@ -60,7 +61,12 @@ function UserDetails() {
   console.log(roomDetails);
 
   let { isLoading, isError } = useSelector((state) => state.app, shallowEqual);
-  if (isLoading) return <div>...loading</div>;
+  if (isLoading) return <Skeleton
+  animation="wave"
+  height={10}
+  width="80%"
+  style={{ marginBottom: 6 }}
+/>;
   return (
     <>
       <div>
@@ -106,8 +112,8 @@ function UserDetails() {
                     <h2>{i.name}</h2>
                     <p>{i.location}</p>
                   </div>
-                  <div style={{ marginLeft: "25px", paddingTop: "5px" }}>
-                    <h3>
+                  <div style={{ marginLeft: "25px", paddingTop: "5px"}}>
+                    <h3 style={{ border: "1px solid red", padding: "5px", color:"red"}}>
                       {i.rating}
                       <span style={{ color: "rgb(243,146,66)" }}>★</span>
                     </h3>
