@@ -153,10 +153,15 @@ function HotelItem({
                     </Link>
                   </Button>
                   <Button
-                    variant="contained"
-                    style={{ background: "rgb(25,181,79)" }}
+                    variant="out"
+                    style={{  border: "1px solid black",color: "white", backgroundColor: "green" }}
                   >
-                    Book Now
+                    <Link
+                      to={`/oyorooms/${city}/${id}`}
+                      style={{ textDecoration: "none", color:"white"}}
+                    >
+                      Book Now
+                    </Link>
                   </Button>
                 </Stack>
               </div>
