@@ -4,6 +4,7 @@ import InputPlace from './InputPlace'
 import People from './People'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom'
 
 const theme = createTheme({
     components: {
@@ -30,7 +31,7 @@ const Search = () => {
             <CheckInOut />
             <People />
             <ThemeProvider theme={theme}>
-                <Button variant="contained" >Search</Button>
+                <Link to='payment/2'> <Button variant="contained" >Search</Button></Link>
             </ThemeProvider>
         </div>
     )

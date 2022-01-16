@@ -5,7 +5,6 @@ const initState = {
     isLoading: true,
     isError: false
 };
-
 export default function reducer(state = initState, action) {
     switch (action.type) {
         case appConstants.GET_DATA_REQUEST: {

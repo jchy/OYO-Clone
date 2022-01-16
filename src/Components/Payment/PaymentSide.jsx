@@ -18,6 +18,7 @@ const PayImgDiv = styled.div`
 
 export function PaymentSide({ initVar, payDataDetail, payImg }) {
   const { room, diff, startDate, endDate, guest } = useSelector(state => state.Search)
+  const multiplyValue = diff * room;
   return (
     <div className="paymentB1Side">
       <div>
@@ -46,25 +47,25 @@ export function PaymentSide({ initVar, payDataDetail, payImg }) {
       <div className="margin20">
         <div>Room price for 1 Night X 2 Guests</div>
         <div className="paySideFont14SlightBold">
-          ₹{payDataDetail.price * 3 * room * diff}
+          ₹{payDataDetail.price * 3 * multiplyValue}
         </div>
       </div>
       <div className="margin20">
         <div>Price Drop</div>
         <div className="paySideFont14SlightBold">
-          -₹{payDataDetail.price * 2}
+          -₹{payDataDetail.price * 2 * multiplyValue}
         </div>
       </div>
       <div className="margin20">
         <div>25% Coupon Discount</div>
         <div className="paySideFont14SlightBold">
-          -₹{Math.round(payDataDetail.price / 4)}
+          -₹{Math.round(payDataDetail.price * multiplyValue / 4)}
         </div>
       </div>
       <div className="margin20">
         <div>5% Wizard Discount</div>
         <div className="paySideFont14SlightBold">
-          -₹{Math.round(payDataDetail.price / 20)}
+          -₹{Math.round(payDataDetail.price * multiplyValue / 20)}
         </div>
       </div>
       <div className="margin20">
@@ -79,9 +80,9 @@ export function PaymentSide({ initVar, payDataDetail, payImg }) {
         </div>
         <div className="payAmt">
           ₹
-          {payDataDetail.price -
-            Math.round(payDataDetail.price / 4) -
-            Math.round(payDataDetail.price / 20) +
+          {payDataDetail.price * multiplyValue -
+            Math.round((payDataDetail.price * multiplyValue) / 4) -
+            Math.round((payDataDetail.price * multiplyValue) / 20) +
             399}
         </div>
       </div>

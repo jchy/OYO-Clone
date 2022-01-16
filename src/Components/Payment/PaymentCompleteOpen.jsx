@@ -16,7 +16,7 @@ export function PaymentCompleteOpen({ price, setConfirm }) {
   function handleClick() {
     if (verifyCard) setConfirm(true);
   }
-
+  console.log(cardData);
   useEffect(() => {
     if (
       cardData.card_name.length > 3 &&
@@ -28,6 +28,8 @@ export function PaymentCompleteOpen({ price, setConfirm }) {
     ) {
       setVerifyCard(true);
     }
+    else
+      setVerifyCard(false);
   }, [cardData]);
 
   const handleCardChange = (e) => {
@@ -80,7 +82,7 @@ export function PaymentCompleteOpen({ price, setConfirm }) {
                   <path
                     d="M20 9.5V14.5M17 12H23"
                     stroke="#424242"
-                    stroke-width="2"
+                    strokeWidth="2"
                   />
                 </svg>
               </div>

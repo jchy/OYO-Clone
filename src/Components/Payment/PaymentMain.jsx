@@ -5,47 +5,36 @@ import { PaymentSide } from "./PaymentSide";
 import { PaymentCompleteOpen } from "./PaymentCompleteOpen";
 import { PaymentInpDetail } from "./PaymentInpDetail";
 import { ThreeDots } from '@agney/react-loading';
-
+import OrderDone from "./OrderDone"
 import { useState, useEffect } from "react";
-// import { hotels } from "../db";
-import { useParams, useHistory } from "react-router-dom";// eslint-disable-line
-
-
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "./api";
-// import { loadingButtonClasses } from "@mui/lab";
 
-var initVar = {
-  days: "1",
-  date: "Thu, 14 Oct - Fri, 15 Oct",
-  room: "1 Room, 2 Guests",
-  type: "SPOT ON NON-AC"
-};
 
 export function PaymentMain() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { todos, isLoading } = useSelector(state => state.Checkout)
-
+  const { todos, isLoading, isError } = useSelector(state => state.Checkout);
   const [confirm, setConfirm] = useState(false);
+  const { id } = useParams();
+  const [cardOpen, setCardOpen] = useState(false);
+  const [user, setUser] = useState({});
+
   const handleleave = () => {
     setConfirm(false);
     history.push("/");
   };
 
-  const { id } = useParams();
-  const [cardOpen, setCardOpen] = useState(false);
-  const [user, setUser] = useState({});
-
   const handleGoBack = () => {
     history.push("/hotels");
   };
-  console.log("id", id)
+
   useEffect(() => {
     dispatch(getData(Number(id)))
     //
   }, []);// eslint-disable-line
-
+  // <div style={{ height: '100vh', width: '100%', display: "flex", alignItems: 'center', justifyContent: 'center' }}><img src="https://bit.ly/3A1IQsi" alt="hi"></img></div>
   return (
     <>
       {isLoading && <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }} ><ThreeDots width="150" /></div>}
@@ -68,16 +57,16 @@ export function PaymentMain() {
           <div className="payB1B1">
             <div className="paymentB1Main">
               <div className="paySave">
-                Yay! You just saved Rs {todos[0].price * 2} on this booking!
+                Yay! You just saved Rs {todos[0]?.price * 2} on this booking!
               </div>
               {cardOpen ? (
                 <>
                   <PaymentInpDetail setCardOpen={setCardOpen} user={user} />
                   <PaymentCompleteOpen
                     price={
-                      todos[0].price -
-                      Math.round(todos[0].price / 4) -
-                      Math.round(todos[0].price / 20) +
+                      todos[0]?.price -
+                      Math.round(todos[0]?.price / 4) -
+                      Math.round(todos[0]?.price / 20) +
                       399
                     }
                     setConfirm={setConfirm}
@@ -91,39 +80,13 @@ export function PaymentMain() {
               )}
             </div>
             <PaymentSide
-              initVar={initVar}
-              payImg={todos[0].images}
+              payImg={todos[0]?.images}
               payDataDetail={todos[0]}
             />
           </div>
         </div>
 
-        {confirm && (
-          <div className="payBlur">
-            <div>
-              <div className="paymentConfirmed">
-                <div className="payTick">
-                  <img src="/Images/Payment/Group.svg" alt="" />
-                </div>
-                <div>Booking Confirmed</div>
-                <div>
-                  You will receive a mail in your above mentioned email-ID
-                </div>
-                <div>View Order Details</div>
-                <button onClick={handleleave} className="payThankYou">
-                  THANK YOU
-                </button>
-              </div>
-              <div>
-                <PaymentSide
-                  initVar={initVar}
-                  payImg={todos[0].images}
-                  payDataDetail={todos[0]}
-                />
-              </div>
-            </div>
-          </div>
-        )}
+        {confirm && <OrderDone todos={todos} handleleave={handleleave} />}
       </div>}
     </>
   );

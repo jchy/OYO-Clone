@@ -7,6 +7,7 @@ const PayInput = styled.input`
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+  background-color:${props => props.primary === "true" ? "red" : "white"};
   border: 1px solid #d3d3d3;
   box-sizing: border-box;
   border-radius: 2px;
@@ -32,9 +33,11 @@ export function PaymentDetail({ setCardOpen, setUser }) {
     if (
       userData.name.length > 3 &&
       userData.email.length > 4 &&
-      userData.mobile.length >= 10
+      userData.mobile.length === 10
     )
       setVerifyData(true);
+    else
+      setVerifyData(false);
     if (userData.code.length === 4 && isTimer) setVerifyCode(true);
     else setVerifyCode(false);
   }, [isTimer, userData]);
@@ -80,14 +83,10 @@ export function PaymentDetail({ setCardOpen, setUser }) {
           <div className="paymarginSpecial">
             <div className="paylabel">Full Name</div>
             <PayInput
-              style={
-                verifyData
-                  ? { backgroundColor: "#e8f0fe" }
-                  : { backgroundColor: "white" }
-              }
               onChange={handleInputChange}
               name="name"
               type="text"
+              primary={verifyData ? "true" : "false"}
               value={userData.name}
               placeholder="Enter first and last name"
             />
@@ -95,11 +94,6 @@ export function PaymentDetail({ setCardOpen, setUser }) {
           <div>
             <div className="paylabel">Email Address</div>
             <PayInput
-              style={
-                verifyData
-                  ? { backgroundColor: "#e8f0fe" }
-                  : { backgroundColor: "white" }
-              }
               onChange={handleInputChange}
               name="email"
               type="text"
@@ -109,11 +103,6 @@ export function PaymentDetail({ setCardOpen, setUser }) {
           <div className="paymarginSpecial">
             <div className="paylabel">Mobile Number</div>
             <PayInput
-              style={
-                verifyData
-                  ? { backgroundColor: "#e8f0fe" }
-                  : { backgroundColor: "white" }
-              }
               onChange={handleInputChange}
               name="mobile"
               type="number"
