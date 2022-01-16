@@ -5,6 +5,7 @@ import Hotel from "../pages/Hotel";
 import Login from "../pages/Login";
 import CheckOut from "../pages/CheckOut";
 import HotelRoomDetails from "../pages/HotelRoomDetails";
+import Allcities from "../pages/Allcities";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +30,9 @@ const AllRoutes = () => {
       </Route>
       <Route exact path="/payment/:id">
         <CheckOut />
+      </Route>
+      <Route exact path="/allcities">
+        <Allcities/>
       </Route>
     </div>
   );

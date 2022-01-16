@@ -1,0 +1,23 @@
+.city_outer_div{
+    display: flex;
+    justify-content: space-around;
+}
+.cities{
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh;
+    background-color: rgba(242,244,247,255);
+}
+ .city_inner_div > p:hover{
+    cursor: pointer;
+    color: red;
+}
+.cities  h4:hover {
+color: red;
+cursor: pointer;
+}
+.city_inner_div{
+    text-align: left;
+    font-size: 20px;
+
+}
