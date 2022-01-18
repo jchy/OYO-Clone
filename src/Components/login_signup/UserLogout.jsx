@@ -25,7 +25,7 @@ const UserLogout = () => {
         Profile
       </div>
       <div onClick={handleDefault}>
-        <Link to={`/${token}`}>
+        <Link to={`/${token}`} style={{textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color:"black", width:"100%"}}>
           <BackpackOutlinedIcon />
           My Booking
         </Link>
