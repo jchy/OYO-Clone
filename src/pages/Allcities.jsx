@@ -101,7 +101,6 @@ const Allcities = () => {
         <p>Bhilwara</p>
         <p>Bhubaneswar</p>
         </div>
-
       </div>
       </>
     );

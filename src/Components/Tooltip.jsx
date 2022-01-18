@@ -13,7 +13,7 @@ import { Kolkata_cities } from './Tooltip_city_name/Kolkata_cities';
 import { Mumbai_cities } from './Tooltip_city_name/Mumbai_cities';
 import { Noida_cities } from './Tooltip_city_name/Noida_cities';
 import { Pune_cities } from './Tooltip_city_name/Pune_cities';
-
+import {Link} from "react-router-dom";
 
 import 'tippy.js/themes/light.css';
 import "./Tooltip.css";
@@ -83,8 +83,9 @@ const ToolTip = ()=>{
               <ExpandMoreIcon/>
            </div>
            <div className="tooltip_city_name">
-               <p>All Cities</p>
-              
+               <Link to="/allcities" style={{textDecoration: "none", cursor: "pointer", color:"rgb(133, 127, 127)"}}>
+                  <p>All Cities</p>
+               </Link>
            </div>
 
         </div>
