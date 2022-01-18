@@ -22,3 +22,23 @@ export const getData = (id) => (dispatch) => {
             dispatch(failureAction);
         });
 };
+
+async function sendData(data) {
+    await fetch("https://oyouser.herokuapp.com/data", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then((response) => response.json());
+}
+async function sendHotelData(data) {
+    await fetch("https://oyouser.herokuapp.com/booked_hotel", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then((response) => response.json());
+}
+export { sendHotelData, sendData };

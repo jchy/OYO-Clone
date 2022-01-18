@@ -7,10 +7,10 @@ import {Banner,Banner1} from '../Components/banner/Banner';
 import WorldwideMarketing from '../Components/World/WorldwideMarketing';
 import { Notify } from '../Components/Notify';
 function Home() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  if (!isAuth) {
-    return <Redirect to="/login-signup" />;
-  }
+  // const isAuth = useSelector((state) => state.auth.isAuth);
+  // if (!isAuth) {
+  //   return <Redirect to="/login-signup" />;
+  // }
   return (
     <div>
       <ToolTip/>

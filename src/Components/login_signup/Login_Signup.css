@@ -1,0 +1,146 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20vh;
+    background-image: url(./Media/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+  }
+  .left {
+    width: 35%;
+    margin-left: 15%;
+    text-align: left;
+    margin-top: 50px;
+    color: white;
+  }
+  .left > h1 {
+    font-size: 48px;
+    line-height: 45px;
+  }
+  .left > p {
+    font-weight: 700;
+  }
+  .right {
+    position: absolute;
+    margin-left: 59%;
+    width: 480px;
+    height: 520px;
+    background-color: white;
+  }
+  .promo {
+    background-color: #DB1C3F;
+    color: white;
+    text-align: left;
+    padding: 0.1px;
+  }
+  .promo > p {
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 18px;
+  }
+  .container {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+  }
+  .container > h1 {
+    margin: 25px 0;
+  }
+  .container > p {
+    font-weight: 600;
+  }
+  .container > div > p {
+    font-weight: 600;
+    margin: 20px 0 13px;
+  }
+  .container > div > div > input {
+    width: 93%;
+    padding: 12px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 5px;
+  }
+  .container > div > div > button {
+    width: 60%;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    background-color: #C9C9C9;
+    border: 0px;
+    border-radius: 3px;
+    margin-top: 30px;
+  }
+  .container > div > div > button:hover {
+    cursor: pointer;
+  }
+  .rightFooter {
+    margin-top: 40px;
+  }
+  .rightFooter > div {
+    display: flex;
+  }
+  .hRow1 {
+    background-color: #C9C9C9;
+    width: 26px;
+    height: 1px;
+    margin-top: 12px;
+  }
+  .hRow2 {
+    background-color: #C9C9C9;
+    width: 68%;
+    height: 1px;
+    margin-top: 12px;
+  }
+  .signInAs {
+    margin: 0 10px;
+  }
+  .other > div {
+    display: flex;
+    width: 170px;
+    justify-content: center;
+  }
+  .other > div:hover {
+    cursor: pointer;
+  }
+  .arrow {
+    border: solid #bdbdbd;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  .border {
+      border-right: 1px solid #C9C9C9;
+  }
+.userLogoutCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top:55px;
+  right:5px;
+  height:150px;
+  width:200px;
+  background-color: #ffffff;
+  box-shadow: 10px 1px 30px 15px rgba(0,0,0,0.35);
+}
+.userLogoutCard>div{
+  padding-right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:30%;
+  width:98%;
+border-bottom: solid gray 1px;
+}
+.userLogoutCard>div:hover{
+  background-color:#bdbdbd;
+}
+.userLogoutCard>div:nth-child(3){
+  border: none;
+}

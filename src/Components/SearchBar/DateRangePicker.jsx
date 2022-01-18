@@ -25,8 +25,10 @@ const DateRange = ({ onOkClick }) => {
 	const okButton = {
 		height: "30px",
 		width: "60px",
-		backgroundColor: "aqua",
-		border: "none"
+		color: "#fff",
+		backgroundColor: "#2121ee",
+		border: "none",
+		cursor: "pointer"
 	}
 
 	const handleClick = () => {
@@ -40,7 +42,7 @@ const DateRange = ({ onOkClick }) => {
 	}
 
 	return (
-		<div style={{ position: 'absolute', left: '25%', margin: 'auto' }}>
+		<div style={{ zIndex: "20", position: 'absolute', left: '25%', margin: 'auto' }}>
 			<DateRangePicker
 				showSelectionPreview={false}
 				showMonthAndYearPickers={false}

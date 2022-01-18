@@ -9,25 +9,33 @@ import OrderDone from "./OrderDone"
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "./api";
+import { getData, sendHotelData } from "./api";
+import { uuid } from "uuidv4";
 
 
 export function PaymentMain() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { todos, isLoading, isError } = useSelector(state => state.Checkout);
+  const { token } = useSelector(state => state.auth)
   const [confirm, setConfirm] = useState(false);
   const { id } = useParams();
   const [cardOpen, setCardOpen] = useState(false);
   const [user, setUser] = useState({});
 
   const handleleave = () => {
+    let payload = {
+      data: todos[0],
+      id: uuid(),
+      userId: token
+    };
+    sendHotelData(payload);
     setConfirm(false);
     history.push("/");
   };
 
   const handleGoBack = () => {
-    history.push("/hotels");
+    history.goBack();
   };
 
   useEffect(() => {
@@ -46,7 +54,7 @@ export function PaymentMain() {
                 history.push("/");
               }}
               src="/Images/Payment/Union.svg"
-              alt=""
+              alt="image"
             />
           </div>
         </div>

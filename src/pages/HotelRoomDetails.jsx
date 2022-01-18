@@ -461,7 +461,7 @@ function UserDetails() {
                     }}
                   >
                     <Link
-                      to="/payment/1"
+                      to={`/payment/${itemDetails.id}`}
                       style={{
                         padding: "20px",
                         background: "green",

@@ -8,7 +8,6 @@ var initcard = {
   card_yy: "",
   card_cvv: "",
 };
-
 export function PaymentCompleteOpen({ price, setConfirm }) {
   const [verifyCard, setVerifyCard] = useState(false);
   const [cardData, setCardData] = useState(initcard);

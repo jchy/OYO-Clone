@@ -1,25 +1,28 @@
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { loginSuccess } from "../redux/auth/action";
+import "../Components/login_signup/Login_Signup.css";
+import Left from "../Components/login_signup/Left";
+import Right from "../Components/login_signup/Right";
+import { useSelector } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+// import Wizard from '../Wizard/Wizard';
 
-function Login() {
-  const dispatch = useDispatch();
-
-  const handleLogin = () => {
-    const action = loginSuccess(Date.now());
-    dispatch(action);
-  };
-  let auth = useSelector((state) => state.auth.isAuth, shallowEqual);
-
-  if (auth) {
+function Login_Signup() {
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  if (isAuth) {
     return <Redirect to="/" />;
   }
   return (
-    <div>
-      <h3>Login</h3>
-      <button onClick={handleLogin}>Please click on this to login</button>
-    </div>
+    <>
+      <div className="main">
+        <div className="left">
+          <Left />
+        </div>
+        <div className="right">
+          <Right />
+        </div>
+      </div>
+      {/* <Wizard /> */}
+    </>
   );
 }
 
-export default Login;
+export default Login_Signup;

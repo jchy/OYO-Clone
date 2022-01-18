@@ -2,6 +2,8 @@ import "./PaymentStyle.css";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
+import { useSelector } from 'react-redux'
+import { uuid } from "uuidv4";
 
 const PayInput = styled.input`
   font-weight: 500;
@@ -15,18 +17,19 @@ const PayInput = styled.input`
   width: 250px;
 `;
 
-var initData = {
-  name: "",
-  email: "",
-  mobile: "",
-  code: "",
-};
+
 
 export function PaymentDetail({ setCardOpen, setUser }) {
+  const { mail, numb } = useSelector(state => state.auth)
   const [verifyData, setVerifyData] = useState(false);
   const [verifyCode, setVerifyCode] = useState(false);
   const [sendCode, setSendCode] = useState(false);
-  const [userData, setUserData] = useState(initData);
+  const [userData, setUserData] = useState({
+    name: mail?.split('@').slice(0, 1).join("") || "",
+    email: mail || "",
+    mobile: numb || "",
+    code: "",
+  });
   const [isTimer, setIsTimer] = useState(false);
 
   useEffect(() => {
@@ -50,6 +53,14 @@ export function PaymentDetail({ setCardOpen, setUser }) {
 
   function handleClick() {
     if (verifyData) {
+
+      let payload = {
+        numb: userData.mobile,
+        mail: userData.email,
+        pass: userData.code,
+        id: uuid()
+      };
+
       setSendCode(true);
       setIsTimer(true);
     }
@@ -86,7 +97,7 @@ export function PaymentDetail({ setCardOpen, setUser }) {
               onChange={handleInputChange}
               name="name"
               type="text"
-              primary={verifyData ? "true" : "false"}
+              // primary={verifyData ? "true" : "false"}
               value={userData.name}
               placeholder="Enter first and last name"
             />
@@ -97,6 +108,7 @@ export function PaymentDetail({ setCardOpen, setUser }) {
               onChange={handleInputChange}
               name="email"
               type="text"
+              value={`${userData.email}`}
               placeholder="name@abc.com"
             />
           </div>
@@ -105,7 +117,8 @@ export function PaymentDetail({ setCardOpen, setUser }) {
             <PayInput
               onChange={handleInputChange}
               name="mobile"
-              type="number"
+              type="text"
+              value={userData.mobile}
               placeholder="e.g. 1234567890"
             />
           </div>
@@ -180,3 +193,5 @@ export function PaymentDetail({ setCardOpen, setUser }) {
     </div>
   );
 }
+
+

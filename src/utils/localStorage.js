@@ -15,3 +15,11 @@ export const saveData = (key, value) => {
     return -1;
   }
 };
+export const deleteData = (key) => {
+  try {
+    localStorage.removeItem(key);
+    return 1;
+  } catch (err) {
+    return -1;
+  }
+};

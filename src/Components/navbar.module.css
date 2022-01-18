@@ -1,7 +1,12 @@
 .nav {
   display: flex;
-  justify-content: left;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top:0;
   gap: 1rem;
+  background-color:white;
+  z-index: 1000;
   border: 2px solid rgb(238, 238, 238);
 }
 .navLink {
@@ -17,4 +22,30 @@
 }
 .navLogo {
   text-align: left;
+}
+.navLinkUser {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+.heading3{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+.userLogout{
+  display: none;
+}
+.userLogout:hover{
+display:block;
+}
+.heading3:hover  .userLogout{
+display: block;
+}
+.heading{
+  margin:0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

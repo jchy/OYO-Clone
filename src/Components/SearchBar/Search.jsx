@@ -11,7 +11,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    height: '6vh',
+                    height: '5.7vh',
                     width: '9vw',
                     backgroundColor: '#1ab64f',
                     '&:hover': {
@@ -31,7 +31,7 @@ const Search = () => {
             <CheckInOut />
             <People />
             <ThemeProvider theme={theme}>
-                <Link to='oyorooms' style={{textDecoration:"none"}}> <Button variant="contained" >Search</Button></Link>
+                <Link to='oyorooms' style={{ textDecoration: "none" }}> <Button variant="contained" >Search</Button></Link>
             </ThemeProvider>
         </div>
     )
