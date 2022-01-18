@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import CheckOut from "../pages/CheckOut";
 import HotelRoomDetails from "../pages/HotelRoomDetails";
 import Allcities from "../pages/Allcities";
+import MybookingCart from "../pages/MybookingCart";
 
 const AllRoutes = () => {
   return (
@@ -33,6 +34,9 @@ const AllRoutes = () => {
       </Route>
       <Route exact path="/allcities">
         <Allcities/>
+      </Route>
+      <Route exact path="/:userId">
+        <MybookingCart/>
       </Route>
     </div>
   );

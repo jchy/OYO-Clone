@@ -6,22 +6,32 @@ import {fetchUserDetails} from "./api"
 const MybookingCart = () => {
   const { userId } = useParams();
   const [data, setData] = useState([]);
-//   console.log(userId);
+  const [flag, setFlag] = useState(false);
+
+  console.log(fetchUserDetails, "function");
+  console.log(userId, "userId");
 //   var arr= []
   useEffect(() => {
+      console.log("i am")
    fetchUserDetails(userId)
-   .then((res) =>
-   setData(res[0])
+   .then((res) =>{
+       setData(res)
+       setFlag(true);
+   }
    )
   }, []);
 
-//   console.log(data.data,"data");
-//   console.log(data.data.images, "image");
-
   return (
-    <div style={{ display: "flex", justifyContent: "center",alignItems: "center", marginTop:"120px"}}>
-      <PaymentSide payDataDetail={data.data} payImg={data.data.images}/>
+      <>
+      <div style={{ display: "flex", marginTop:"50px", flexWrap:"wrap",justifyContent:"center", gap:"1rem"}}>
+      {flag && data.map((elem,i)=>
+    <div >
+      <PaymentSide payDataDetail={data[i].data} payImg={data[i].data.images}/>
     </div>
-  );
+      )
+      }
+      </div>
+  </>
+  )
 };
 export default MybookingCart;

@@ -1,4 +1,4 @@
-.world-wide {
+/* .world-wide {
   background: #f4fcfe;
   width: 100%;
   display: flex;
@@ -124,6 +124,176 @@
   background-color: white;
   top: 1555px;
   left: 400px;
+}
+.world-wide-right-section {
+  padding: 50px 120px;
+  text-align: left;
+}
+.world-wide-right-section > p:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.005em;
+  margin-bottom: 40px;
+}
+.world-wide-right-section > p:nth-of-type(2) {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 40px;
+}
+.world-wide-right-section div {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-style: normal;
+}
+.world-wide-right-section div span {
+  font-size: 40px;
+}
+.world-wide-right-section ul {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.world-wide-right-section ul li {
+  margin: 10px;
+  font-size: 25px;
+} */
+.world-wide {
+  background: #f4fcfe;
+  width: 100%;
+  display: flex;
+ 
+}
+
+.uae {
+  position: absolute;
+  width: 108px;
+  height: 126px;
+  left: 130px;
+  top: 1280px;
+  cursor: pointer;
+}
+.uaeDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1250px;
+  left: 145px;
+  color: black;
+}
+.nepal {
+  position: absolute;
+  width: 108px;
+  height: 126px;
+  left: 280px;
+  top: 1240px;
+  cursor: pointer;
+}
+.nepalDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1200px;
+  left: 300px;
+  color: black;
+}
+.china {
+  position: absolute;
+  width: 108px;
+  height: 126px;
+  left: 440px;
+  top: 1250px;
+  cursor: pointer;
+}
+.chinaDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1220px;
+  left: 500px;
+  color: black;
+}
+.india {
+  position: absolute;
+  width: 108px;
+  height: 126px;
+  left: 280px;
+  top: 1390px;
+  cursor: pointer;
+}
+.indiaDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1450px;
+  left: 300px;
+  color: black;
+}
+.malayasia {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  left: 420px;
+  top: 1450px;
+  cursor: pointer;
+}
+.malayasiaDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1420px;
+  left: 500px;
+  color: black;
+}
+.indonesia {
+  position: absolute;
+  width: 106px;
+  height: 136px;
+  left: 380px;
+  top: 1550px;
+  cursor: pointer;
+}
+.indoDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background-color: white;
+  top: 1555px;
+  left: 400px;
+  color: black;
 }
 .world-wide-right-section {
   padding: 50px 120px;

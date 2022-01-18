@@ -18,6 +18,7 @@ function WorldwideMarketing() {
   };
   const handleindia = () => {
     setindia(true);
+    console.log(india);
   };
   const handlemalayasia = () => {
     setmalayasia(true);

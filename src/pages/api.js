@@ -6,6 +6,7 @@ import {
   getHotelRoomRequest,
   getHotelRoomSuccess
 } from "../redux/app/action";
+import axios from "axios";
 
 export const getHotelRooms = (city="Delhi") => (dispatch) => {
   // pre fetch
@@ -51,3 +52,12 @@ export const addHotelRooms = (text) => (dispatch) => {
       dispatch(failureAction);
     });
 };
+
+export const fetchUserDetails =(token) =>{
+  return fetch(`https://oyouser.herokuapp.com/booked_hotel?userId=${token}`)
+    .then((res) => res.json())
+    .then((res) => {
+      return res;
+    })
+};
+
