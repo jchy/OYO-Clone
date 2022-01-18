@@ -25,13 +25,14 @@ const theme = createTheme({
 
 
 const Search = () => {
+    
     return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <InputPlace />
             <CheckInOut />
             <People />
             <ThemeProvider theme={theme}>
-                <Link to='oyorooms' style={{ textDecoration: "none" }}> <Button variant="contained" >Search</Button></Link>
+                <Link to='/oyorooms' style={{ textDecoration: "none" }}> <Button variant="contained" >Search</Button></Link>
             </ThemeProvider>
         </div>
     )

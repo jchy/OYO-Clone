@@ -11,7 +11,7 @@ import ElevatorIcon from "@mui/icons-material/Elevator";
 import { Link } from "react-router-dom";
 import Footer from "../Components/footer/Footer";
 import { Skeleton } from "@mui/material";
-
+import Navbar2 from "../Components/Navbar2";
 // var data = [];
 var slideImages = [];
 // HOOkS
@@ -52,12 +52,6 @@ function UserDetails() {
     },
   ];
 
-  // if(roomDetails){
-  //   setFlag(null);
-  // }
-  // else{
-  //   setFlag(true);
-  // }
   console.log(roomDetails);
 
   let { isLoading, isError } = useSelector((state) => state.app, shallowEqual);
@@ -69,6 +63,7 @@ function UserDetails() {
 />;
   return (
     <>
+    <Navbar2 />
       <div>
         <div>
           <Slide>

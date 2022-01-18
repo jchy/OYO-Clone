@@ -13,7 +13,7 @@ const Navbar2 = () => {
         <>
             <div className={style.nav}>
                 <Link to="/" style={{ width: "15%", paddingTop: "10px", paddingLeft: "5%" }}>
-                    <img src="./NavImages/OYO_Logo.png" alt="" height="35px" width="90px" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/OYO_Rooms_logo.png" alt="" height="35px" width="90px" />
                 </Link>
                 <Search />
 
@@ -24,16 +24,14 @@ const Navbar2 = () => {
                 >
                     {isAuth ?
                         <>
-                            <h3 className={style.heading}><AccountCircleIcon sx={{ fontSize: 40 }} />{mail}</h3>
+                            <h3 className={style.heading}><AccountCircleIcon sx={{ fontSize: 40 }} />{mail.split("@").slice(0, 1).join("")}</h3>
                             <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <div className={style.userLogout}> <UserLogout /></div>
                             </div>
                         </> :
-                        <img src="./NavImages/loginlogo.jpeg" alt="" height="35px" />}
-
+                        <img src="https://raw.githubusercontent.com/Sakline01/typescript-practice/master/loginlogo.jpeg" alt="" height="35px" />}
                 </Link>
             </div>
-
         </>
     );
 };

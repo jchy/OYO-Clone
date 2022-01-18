@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
 import { addHotelRooms, getHotelRooms } from "./api";
 import DisplayHotel from "./DisplayHotel";
+import Navbar from "../Components/Navbar";
 
 function Hotel() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function Hotel() {
 
   return (
     <div>
+      <Navbar/>
       <DisplayHotel />
     </div>
   );

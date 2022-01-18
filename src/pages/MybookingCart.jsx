@@ -2,6 +2,7 @@ import { PaymentSide } from "../Components/Payment/PaymentSide";
 import { useParams } from "react-router-dom";
 import { useEffect, useState} from "react";
 import {fetchUserDetails} from "./api"
+import Navbar2 from "../Components/Navbar2";
 
 const MybookingCart = () => {
   const { userId } = useParams();
@@ -23,6 +24,7 @@ const MybookingCart = () => {
 
   return (
       <>
+      <Navbar2 />
       <div style={{ display: "flex", marginTop:"50px", flexWrap:"wrap",justifyContent:"center", gap:"1rem"}}>
       {flag && data.map((elem,i)=>
     <div >

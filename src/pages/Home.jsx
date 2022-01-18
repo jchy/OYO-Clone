@@ -6,13 +6,12 @@ import { ToolTip } from '../Components/Tooltip';
 import {Banner,Banner1} from '../Components/banner/Banner';
 import WorldwideMarketing from '../Components/World/WorldwideMarketing';
 import { Notify } from '../Components/Notify';
+import Navbar from "../Components/Navbar";
 function Home() {
-  // const isAuth = useSelector((state) => state.auth.isAuth);
-  // if (!isAuth) {
-  //   return <Redirect to="/login-signup" />;
-  // }
+ 
   return (
     <div>
+      <Navbar/>
       <ToolTip/>
       <HomeSearch />
       <Banner1/>

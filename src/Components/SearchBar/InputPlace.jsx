@@ -8,7 +8,7 @@ const InputPlace = () => {
     const [dataListShow, setDataListShow] = useState(false)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(searchCityName({ val }));
+        dispatch(searchCityName( {val} ));
         val.length >= 2 ? setDataListShow(true) : setDataListShow(false);
         // eslint-disable-next-line
     }, [val])

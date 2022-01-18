@@ -8,11 +8,12 @@ import {
 } from "../redux/app/action";
 import axios from "axios";
 
-export const getHotelRooms = (city="Delhi") => (dispatch) => {
+export const getHotelRooms = (city) => (dispatch) => {
   // pre fetch
+  let url = city ? `https://oyo-server.herokuapp.com/hotel?city=${city}` : "https://oyo-server.herokuapp.com/hotel";
   const requestAction = getHotelRoomRequest();
   dispatch(requestAction);
-  return fetch(`https://oyo-server.herokuapp.com/hotel?city=${city}`)
+  return fetch(url)
     .then((res) => res.json())
     .then((res) => {
       //success

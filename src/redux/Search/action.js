@@ -27,7 +27,7 @@ export const totalNoGuest = ({ val }) => {
         }
     };
 };
-export const searchCityName = ({ val }) => {
+export const searchCityName = ({val} ) => {
     return {
         type: appConstants.SEARCH_CITY_NAME,
         payload: val
