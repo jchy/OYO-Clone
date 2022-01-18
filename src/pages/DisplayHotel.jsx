@@ -149,7 +149,7 @@ function HotelItem({
                       to={`/oyorooms/${city}/${id}`}
                       style={{ textDecoration: "none", color: "black" }}
                     >
-                      Show more info
+                      View Details
                     </Link>
                   </Button>
                   <Button
@@ -299,7 +299,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Bangalore
+              Korampur
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -312,7 +312,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Delhi
+              Keshavapura
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -325,7 +325,7 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Gurgaon
+              Bellundur
             </Button>
           </div>
           <div style={{ margin: "10px" }}>
@@ -338,10 +338,10 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Nagpur
+              Indra Vihar
             </Button>
           </div>
-          <div style={{ margin: "10px" }}>
+          {/* <div style={{ margin: "10px" }}>
             <Button
               variant="outlined"
               onClick={handleFilterClick}
@@ -351,9 +351,9 @@ function DisplayHotel() {
                 border: "none"
               }}
             >
-              Mumbai
+              Bellundur
             </Button>
-          </div>
+          </div> */}
           <div style={{ margin: "10px" }}>
             <div>
               <Button
@@ -708,7 +708,7 @@ function DisplayHotel() {
           >
             <div>
               <span style={{ fontSize: "20px", fontWeight: "700" }}>
-                1258 OYOs in Delhi, India
+                1258 OYOs in {city}, India
               </span>
               <span style={{ marginLeft: "100px" }}> Map View </span>
               <span style={{ marginLeft: "8px" }}>
@@ -761,8 +761,8 @@ function DisplayHotel() {
             </div> }
             {  hotelDataArray
               .filter((elem) => {
-                if (elem.city === filterBy && (elem.price >= start) && (elem.price <= end)) {
-                  return elem.city;
+                if (elem.citys === filterBy && (elem.price >= start) && (elem.price <= end)) {
+                  return elem.citys;
                 } else if (filterBy === "") {
                   return elem;
                 }
