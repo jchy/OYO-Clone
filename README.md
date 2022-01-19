@@ -1,6 +1,6 @@
 # OYO-PROJECT
 ### It is a team project, We are a 4 member team
-## List of team members:~
+## List of team members
 | First Name   | Last Name|
 | -------------|----------|
 | Utkarsh      | Singh    |
@@ -9,8 +9,8 @@
 | Suryakant    |          |
 
 
-## Features of the project: 
-### This project has the following features:~
+## Features of the project
+### This project has the following features
 - [x] User can Login by validating through mock-server API
 - [x] User can Signup using API request and saving user data at the server
 - [x] User can Search the OYO Hotel rooms in different cities like Bangalore, Delhi, Gurgaon, Mumbai and Nagpur from the json database
@@ -40,3 +40,21 @@
 | `cd oyo-repo-by-jchy` | Navigate inside the react app |
 | `npm install` | It will install *all the required dependencies* to run the project |
 | `npm run start` | It will run the project on your local server |
+
+<details><summary>Tech Stacks Used</summary>
+<p>
+
+### Following tech stacks have been used 
+
+    -[x] React
+    -[x] React-redux(Thunks, ApplyMiddleware)
+    -[x] Fetch
+    -[x] JavaScript
+    -[x] HTML
+    -[x] Material UI
+    -[x] Slide from react-slide-shadow(Horizontal image slider
+    -[x] CSS 
+    -[x] Styled-Component
+
+</p>
+</details>
