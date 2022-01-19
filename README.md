@@ -82,7 +82,10 @@
 
 #### Payment Page
 <img width="1440" alt="Screenshot 2022-01-19 at 6 05 23 PM" src="https://user-images.githubusercontent.com/91217491/150181886-6dcbd3a0-7506-464c-8e0f-7d3fa10132b8.png">
-  
+
+### Cities Page 
+  ![photo_2022-01-19 19 01 21](https://user-images.githubusercontent.com/91217491/150184978-2b6d5eeb-f272-4aa9-ac35-0a940a75d74d.jpeg)
+
 #### Footer of the site
   <img width="1440" alt="Screenshot 2022-01-19 at 6 15 54 PM" src="https://user-images.githubusercontent.com/91217491/150182269-d8532a69-3c36-4e77-97a3-110c9d6860fd.png">
 
