@@ -1,4 +1,7 @@
 # OYO-PROJECT
+### Project is deployed on Netlify
+> You can view this project on the follwoing link: https://zealous-shirley-afc987.netlify.app/
+
 > It was a team project, We were a four member team
 ### Duration of the project
 > It took 5 days from 14/01/2022 to 18/01/2022, to build this site from scratch
