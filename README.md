@@ -67,4 +67,8 @@
 
   
 <img width="1440" alt="Screenshot 2022-01-19 at 6 02 22 PM" src="https://user-images.githubusercontent.com/91217491/150147459-4de889ea-6e3a-4519-861d-eb247dc52079.png">
+  <img width="1440" alt="Screenshot 2022-01-16 at 10 33 52 AM" src="https://user-images.githubusercontent.com/91217491/150179425-b378a1f7-8e7d-4c17-8eaf-ebef184e6a2e.png">
+  
+  <img width="1440" alt="Screenshot 2022-01-19 at 6 04 30 PM" src="https://user-images.githubusercontent.com/91217491/150179971-2b6e38a4-9189-4f43-bdee-0534793da1e5.png">
+
   
