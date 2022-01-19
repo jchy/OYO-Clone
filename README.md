@@ -1,5 +1,14 @@
 # OYO-PROJECT
-## It was a team project.
+### It is a team project, We are a 4 member team
+## List of team members:~
+| First Name   | Last Name|
+| -------------|----------|
+| Utkarsh      | Singh    |
+| Md. Sakline  | SK       |
+| Jaswant      | Chaudhary|
+| Suryakant    |          |
+
+
 ## Features of the project: 
 ### This project has the following features:~
 - [x] User can Login by validating through mock-server API
@@ -8,7 +17,7 @@
 - [x] Hotel rooms data will be fetched from mock server using fetch request
 - [x] User can Sort the search results by popularity, Guest Rating, Price Low_to_high and High_to_low  
 - [x] User can search the specific places like Korampur, Keshavpura, Bellundur and Indra Vihar from the searched city results
-- [x] USer can View the hotel room details from the searched results
+- [x] User can View the hotel room details from the searched results
 - [x] User can select the date range for booking    
 - [x] User can increase number of guests upto 3 after that increment button will be disabled
 - [x] User can decrease the number of guests till 1 is number of guest reamin only 1 decrement button will be disabled
@@ -22,3 +31,4 @@
 - [x] User will not be able to login if mail/number is missing or password is less than 4 digits or he enters invalid credentials
 - [x] User can view all the previoulsy booked hotel with his id if he will be logged in
 - [x] User won't be able to login or signup id mobile number field has less than 10 digits
+
