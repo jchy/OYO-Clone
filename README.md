@@ -1,5 +1,8 @@
 # OYO-PROJECT
-### It is a team project, We are a 4 member team
+> It was a team project, We were a four member team
+### Duration of the project
+> It took 5 days from 14/01/2022 to 18/01/2022, to build this site from scratch
+
 ## List of team members
 | First Name   | Last Name|
 | -------------|----------|
