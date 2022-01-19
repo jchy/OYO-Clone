@@ -60,3 +60,9 @@
 
 ## Sanpshot of the project 
   [This is an image](https://drive.google.com/file/d/1SPgC2-D7rVax5TmdD_Sj96b23djoDd6a/view?usp=sharing)
+<img width="1440" alt="Screenshot 2022-01-19 at 6 06 35 PM" src="https://user-images.githubusercontent.com/91217491/150139323-22bb1280-a784-4bfe-a02e-94aa3ef85e88.png">
+<img width="1440" alt="Screenshot 2022-01-19 at 6 55 21 PM" src="https://user-images.githubusercontent.com/91217491/150139680-b2601c75-6b36-4287-82c7-e01386a11236.png">
+![Uploading Screenshot 2022-01-19 at 6.02.30 PM.png…]()
+![Uploading Screenshot 2022-01-19 at 6.04.30 PM.png…]()
+![Uploading Screenshot 2022-01-19 at 6.05.23 PM.png…]()
+![Uploading Screenshot 2022-01-19 at 6.05.30 PM.png…]()
