@@ -65,20 +65,27 @@
 #### Home Page
 <img width="1440" alt="Screenshot 2022-01-19 at 6 55 21 PM" src="https://user-images.githubusercontent.com/91217491/150139680-b2601c75-6b36-4287-82c7-e01386a11236.png">
   
-
+#### Showing results for search "Mumbai"
   <img width="1440" alt="Screenshot 2022-01-19 at 6 56 27 PM" src="https://user-images.githubusercontent.com/91217491/150145285-410c7330-025e-4036-92e3-b5ef6bf4feba.png">
+ 
+#### Showing Error message if searched city doesn't exist in our databse
+<img width="1440" alt="Screenshot 2022-01-16 at 9 34 35 PM" src="https://user-images.githubusercontent.com/91217491/150182558-000738c8-e166-4fa2-a1f9-f30cea1a87f6.png">
 
-  
+#### Showing details of the Hotel Room  
 <img width="1440" alt="Screenshot 2022-01-19 at 6 02 22 PM" src="https://user-images.githubusercontent.com/91217491/150147459-4de889ea-6e3a-4519-861d-eb247dc52079.png">
+
+#### Showing price details of the Hotel Room
   <img width="1440" alt="Screenshot 2022-01-16 at 10 33 52 AM" src="https://user-images.githubusercontent.com/91217491/150179425-b378a1f7-8e7d-4c17-8eaf-ebef184e6a2e.png">
   
+#### Booking page
   <img width="1440" alt="Screenshot 2022-01-19 at 6 04 30 PM" src="https://user-images.githubusercontent.com/91217491/150179971-2b6e38a4-9189-4f43-bdee-0534793da1e5.png">
 
-  
+#### Payment Page
 <img width="1440" alt="Screenshot 2022-01-19 at 6 05 23 PM" src="https://user-images.githubusercontent.com/91217491/150181886-6dcbd3a0-7506-464c-8e0f-7d3fa10132b8.png">
-
+  
+#### Footer of the site
   <img width="1440" alt="Screenshot 2022-01-19 at 6 15 54 PM" src="https://user-images.githubusercontent.com/91217491/150182269-d8532a69-3c36-4e77-97a3-110c9d6860fd.png">
-<img width="1440" alt="Screenshot 2022-01-16 at 9 34 35 PM" src="https://user-images.githubusercontent.com/91217491/150182558-000738c8-e166-4fa2-a1f9-f30cea1a87f6.png">
+
 
   
   
