@@ -32,3 +32,11 @@
 - [x] User can view all the previoulsy booked hotel with his id if he will be logged in
 - [x] User won't be able to login or signup id mobile number field has less than 10 digits
 
+### Commands to execute the project
+| Command | Description |
+| --- | --- |
+| `git clone repo-link` | It will clone this project repository on your local desktop |
+| `cd OYO-Clone` | Navigate inside the OYO-Clone App |
+| `cd oyo-repo-by-jchy` | Navigate inside the react app |
+| `npm install` | It will install *all the required dependencies* to run the project |
+| `npm run start` | It will run the project on your local server |
