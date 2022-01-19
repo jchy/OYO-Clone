@@ -8,8 +8,9 @@
 | Jaswant      | Chaudhary|
 | Suryakant    |          |
 
-<details><summary> <h3>Tech Stacks Used <h3> </summary>
+<details><summary> <h2>Tech Stacks Used <h2> </summary>
 <p>
+  
 ### Following tech stacks have been used 
 - [x] React
 - [x] React-redux(Thunks, ApplyMiddleware)
@@ -20,6 +21,7 @@
 - [x] Slide from react-slide-shadow(Horizontal image slider
 - [x] CSS 
 - [x] Styled-Component
+  
 </p>
 </details>
 
