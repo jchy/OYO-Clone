@@ -95,6 +95,12 @@
 #### 10. Footer of the site
   <img width="1440" alt="Screenshot 2022-01-19 at 6 15 54 PM" src="https://user-images.githubusercontent.com/91217491/150182269-d8532a69-3c36-4e77-97a3-110c9d6860fd.png">
 
+## Terms and Conditons for using this project: 
+- Please do not deploy any webpage at any plateform as we don't have permission from any of the onwer
+- You can use it just for personal learning purpose
+- If you are an organistaion and using our project to teach your trainee please take permission from us
+- Any of the creator of this project (namely: Jaswant Chaudhary, Utkarsh Singh, Md. Sakline SK and Suryakant) will not be responsible if any person from any country is misusing these webpages.
+- If you are misusing it or going to publish anywhere then do it on your own risk.
 
   
   
