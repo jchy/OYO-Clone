@@ -58,3 +58,5 @@
 - [x] User can view all the previoulsy booked hotel with his id if he will be logged in
 - [x] User won't be able to login or signup id mobile number field has less than 10 digits
 
+## Sanpshot of the project 
+  ![This is an image](https://drive.google.com/file/d/1SPgC2-D7rVax5TmdD_Sj96b23djoDd6a/view?usp=sharing)
