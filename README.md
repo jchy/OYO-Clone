@@ -8,6 +8,23 @@
 | Jaswant      | Chaudhary|
 | Suryakant    |          |
 
+<details><summary> <h1>Tech Stacks Used <h1> </summary>
+<p>
+
+### Following tech stacks have been used 
+
+- [x] React
+- [x] React-redux(Thunks, ApplyMiddleware)
+- [x] Fetch
+- [x] JavaScript
+- [x] HTML
+- [x] Material UI
+- [x] Slide from react-slide-shadow(Horizontal image slider
+- [x] CSS 
+- [x] Styled-Component
+
+</p>
+</details>
 
 ## Features of the project
 ### This project has the following features
@@ -41,20 +58,3 @@
 | `npm install` | It will install *all the required dependencies* to run the project |
 | `npm run start` | It will run the project on your local server |
 
-<details><summary> ### Tech Stacks Used </summary>
-<p>
-
-### Following tech stacks have been used 
-
-- [x] React
-- [x] React-redux(Thunks, ApplyMiddleware)
-- [x] Fetch
-- [x] JavaScript
-- [x] HTML
-- [x] Material UI
-- [x] Slide from react-slide-shadow(Horizontal image slider
-- [x] CSS 
-- [x] Styled-Component
-
-</p>
-</details>
